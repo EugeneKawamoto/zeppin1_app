@@ -1,24 +1,35 @@
-# README
+# <ここにアプリ名を入力>
+絶品グルメ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+レストランどのメニューが美味しいかが分かる。
 
-Things you may want to cover:
+### サイトテーマ
+<...>
 
-* Ruby version
+### テーマを選んだ理由
+とあるラーメン屋に訪れた時、人気店ということはわかっていたが、どのメニューが人気なのかは分からなかった。そのため、1回目に訪れた時に食べたメニューでは感動しなかった。それはおかしいと思い、2回目行った時に違うラーメンを頼んでみたところ、美味しく納得の味であった。そういうことが頻繁にあるので、今回それを解消するべく「メニューごとの人気」が分かるサービスを作成した。
 
-* System dependencies
+### ターゲットユーザ
+・優柔不断な人
+・はじめて入ったお店で、美味しい料理を食べたい人
 
-* Configuration
+### 主な利用シーン
+・レストランに訪れた際に、どのメニューが人気でどれが美味しいのかをひと目で知ることができる。
 
-* Database creation
+## 設計書
 
-* Database initialization
 
-* How to run the test suite
+### 機能一覧
+https://docs.google.com/spreadsheets/d/10pVjLpwzXf_CYbOYnmY3KiBRRaQ29r_XGBwHcIVs9jk/edit#gid=0
 
-* Services (job queues, cache servers, search engines, etc.)
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- 仮想環境：Vagrant,VirtualBox
 
-* Deployment instructions
-
-* ...
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
