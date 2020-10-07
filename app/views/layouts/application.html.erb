@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Zeppin1App</title>
+    <title>絶品グルメ</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,23 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="wrapper">
+      <header>
+        <nav>
+          <ul>
+            <li class=""><%= link_to '新規登録', new_user_registration_path %></li>
+            <li class=""><%= link_to 'ログイン', new_user_session_path %></li>
+            <li class=""><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          </ul>
+        <nav>
+      </header>
+
+      <%= yield %>
+
+      <footer>
+      </footer>
+    </div>
   </body>
+
+
 </html>
