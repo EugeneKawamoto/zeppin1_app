@@ -5,4 +5,6 @@ class User < ApplicationRecord
         :recoverable, :rememberable, :validatable
 
   has_many :reviews
+
+  attachment :profile_image
 end
