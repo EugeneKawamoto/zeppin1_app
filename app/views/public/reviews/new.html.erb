@@ -1,0 +1,22 @@
+<div class="col-md-6 col-md-offset-3">
+
+    <h3>新規投稿</h3>
+
+    <%= form_for(@review, url: public_reviews_path, method: :post ) do |f| %>
+    <table>
+      <li><%= f.attachment_field :image %></li><br/>
+
+      <li><%= f.label :comment, "コメント" %></li>
+      <li><%= f.text_area :comment %></li>
+
+      <li><%= f.label :restaurant_id, "店舗" %></li>
+      <li><%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, include_blank:"--選択してください--" %></li><br/>
+
+        <%# f.label :restaurant_id, "メニュー" %>
+        <%# f.collection_select :menu_id, Restaurant.all, :id, :name, include_blank:"--選択してください--" %>
+
+      <%= f.submit '投稿する', class:"btn btn-default"%>
+    </table>
+  <% end %>
+
+</div>
