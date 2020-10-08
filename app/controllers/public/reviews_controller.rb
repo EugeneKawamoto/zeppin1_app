@@ -10,6 +10,7 @@ class Public::ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @review.review_images.build
   end
 
   def create
@@ -26,6 +27,12 @@ class Public::ReviewsController < ApplicationController
 
   def destroy
     
+  end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:user_id, :restaurant_id, :menu_id, :comment, :rate, review_images_images: [])
   end
 
 end

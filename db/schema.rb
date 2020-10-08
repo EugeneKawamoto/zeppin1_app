@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_10_08_034418) do
     t.integer "restaurant_id"
     t.integer "menu_id"
     t.text "comment"
-    t.float "raty", default: 0.0, null: false
+    t.float "rate", default: 0.0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
