@@ -8,7 +8,7 @@
 # coding: utf-8
 
 
-# Restaurant情報記載
+# Restaurant情報記載　日本語化必須（coding:utf-8）
 @restaurants = Restaurant.create!([
   {
     name: 'ピザ屋・ロクサン',

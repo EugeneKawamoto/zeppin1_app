@@ -734,7 +734,7 @@
     click:        undefined,
     half:         false,
     halfShow:     true,
-    hints:        ['bad', 'poor', 'regular', 'good', 'gorgeous'],
+    hints:        ['まずい', '美味しくない', '普通', '美味しい', 'とても美味しい'],
     iconRange:    undefined,
     mouseout:     undefined,
     mouseover:    undefined,
