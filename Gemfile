@@ -77,3 +77,7 @@ gem 'jquery-rails'
 gem 'dotenv-rails'
 
 gem 'pry-rails'
+
+group :production do
+  gem 'mysql2'
+end
