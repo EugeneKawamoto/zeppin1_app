@@ -1,18 +1,26 @@
 <div class="col-md-8 col-md-offset-4">
+		<%= flash[:notice] %>
+
   <h2>マイページ</h2>
   <div class="row">
     <div class="col-xs-4">
-      <%= attachment_image_tag current_user, :profile_image, :fill, 40, 40, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"100x100"%>
+      <%= attachment_image_tag current_user, :profile_image, :fill, 300, 300, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"100x100"%>
     </div>
+
     <div class="col-xs-4">
       <strong><%= current_user.name %></strong>
     </div>
+
     <div class="col-xs-4 offset-4">
         <% if @user.id == current_user.id %>
           <%= link_to "編集する", edit_public_user_path(@user), class:"btn btn-primary" %><br/>
         <% end %>
+    </div>
+
+    <div class="user_introduction">
       <%= current_user.introduction %><br/>
     </div>
+
   </div>
 </div>
 
