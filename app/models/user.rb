@@ -8,6 +8,9 @@ class User < ApplicationRecord
 
   attachment :profile_image
 
+  validates :introduction, length: { maximum: 250 }, allow_blank: true
+
+
   # 簡単ログイン
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|

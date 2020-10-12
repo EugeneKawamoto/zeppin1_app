@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   namespace :public do
     root to: 'reviews#index'
     get 'homes/about' => 'homes#about'
-    get 'users/my_page' => 'users#my_page'
+    get 'users/my_page/:id' => 'users#show', as: 'users/my_page'
     resources :users, only: [:edit, :update]
     resources :reviews, only: [:new, :show, :create, :edit, :update, :destroy]
     resources :menus, only: [:show]

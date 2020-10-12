@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_08_034418) do
+ActiveRecord::Schema.define(version: 2020_10_08_120452) do
 
   create_table "menus", force: :cascade do |t|
     t.string "name"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_10_08_034418) do
     t.integer "restaurant_id"
     t.integer "menu_id"
     t.text "comment"
-    t.float "rate", default: 0.0, null: false
+    t.decimal "rate", precision: 2, scale: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"

@@ -168,12 +168,12 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
-    price: 1200
+    name: '羽つき餃子',
+    price: 800
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
-    price: 1200
+    name: '焼き餃子',
+    price: 600
   }
 ])
 
@@ -181,11 +181,11 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
-    price: 1200
+    name: 'オリジナルブレンド',
+    price: 600
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
+    name: 'パンケーキ',
     price: 1200
   }
 ])
@@ -194,11 +194,11 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
+    name: '焼き鳥',
     price: 1200
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
+    name: '鍋',
     price: 1200
   }
 ])
@@ -207,11 +207,11 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
-    price: 1200
+    name: '鶏と唐辛子の唐揚げ',
+    price: 1100
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
+    name: '魚の黒酢あんかけ',
     price: 1200
   }
 ])
@@ -220,12 +220,12 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
-    price: 1200
+    name: '牛タン',
+    price: 800
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
-    price: 1200
+    name: 'スペアリブ',
+    price: 700
   }
 ])
 
@@ -233,11 +233,11 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
+    name: '厳選盛',
     price: 1200
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
+    name: '焼きしゃぶ',
     price: 1200
   }
 ])
@@ -246,12 +246,12 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
-    price: 1200
+    name: '串揚げ',
+    price: 200
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
-    price: 1200
+    name: '串カツ',
+    price: 240
   }
 ])
 
@@ -259,11 +259,11 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
+    name: 'チーズナンセット',
     price: 1200
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
+    name: 'マトンカレー',
     price: 1200
   }
 ])
@@ -272,11 +272,11 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
+    name: 'おでん盛',
     price: 1200
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
+    name: 'お肉盛り',
     price: 1200
   }
 ])
@@ -285,12 +285,12 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
-    price: 1200
+    name: 'コーヒーゼリー',
+    price: 900
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
-    price: 1200
+    name: 'カフェラテ',
+    price: 700
   }
 ])
 
@@ -298,11 +298,11 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
+    name: 'ピザ',
     price: 1200
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
+    name: 'スパゲッティ',
     price: 1200
   }
 ])
@@ -311,12 +311,12 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
+    name: '手打ちパスタ',
     price: 1200
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
-    price: 1200
+    name: 'グラス・ワイン',
+    price: 800
   }
 ])
 
@@ -324,11 +324,11 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
-    price: 1200
+    name: '前菜盛り',
+    price: 700
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
+    name: 'ホロホロ鳥のロースト',
     price: 1200
   }
 ])
@@ -337,12 +337,8 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
-    price: 1200
-  },{
-    restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
-    price: 1200
+    name: 'にぼしらーめん',
+    price: 900
   }
 ])
 
@@ -350,11 +346,7 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
-    price: 1200
-  },{
-    restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
+    name: '背脂ラーメン',
     price: 1200
   }
 ])
@@ -363,11 +355,11 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
-    price: 1200
+    name: 'お刺身盛',
+    price: 1100
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
+    name: 'アクアパッツァ',
     price: 1200
   }
 ])
@@ -376,12 +368,12 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
-    price: 1200
+    name: '痛風鍋',
+    price: 1000
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
-    price: 1200
+    name: '本日の刺身盛り',
+    price: 800
   }
 ])
 
@@ -389,12 +381,12 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[1].id,
-    name: 'マルゲリータ',
+    name: 'お肉の盛り合わせ',
     price: 1200
   },{
     restaurant_id: @restaurants[1].id,
-    name: 'デラックスピザ',
-    price: 1200
+    name: 'クラフトビール',
+    price: 700
   }
 ])
 

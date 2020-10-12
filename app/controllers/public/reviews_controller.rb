@@ -14,7 +14,7 @@ class Public::ReviewsController < ApplicationController
   end
 
   def create
-    
+    @review = Review.new(review_params)
   end
 
   def edit

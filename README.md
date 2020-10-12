@@ -48,4 +48,5 @@ https://docs.google.com/spreadsheets/d/10pVjLpwzXf_CYbOYnmY3KiBRRaQ29r_XGBwHcIVs
 - ICOOON MONO
 - お名前.com
 - MATERIAL DESIGN
+- EC design
 - https://github.com/wbotelhos/raty/tree/master/lib/images

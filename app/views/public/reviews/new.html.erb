@@ -2,6 +2,7 @@
 
     <h3>新規投稿</h3>
 
+    <!-- レビュー新規投稿フォーム -->
     <%= form_for(@review, url: public_reviews_path, method: :post ) do |f| %>
     <table>
       <li><%= f.attachment_field :review_images_images, multiple: true %></li><br/>
@@ -13,23 +14,30 @@
       <li><%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, include_blank:" -- 選択してください -- " %></li>
 
       <li><%= f.label :menu_id, "メニュー" %></li>
-      <li><%= f.collection_select :menu_id, Menu.all, :id, :name, include_blank:"-- 選択してください --" %></li>
+      <li><%= f.collection_select :menu_id, Menu.all, :id, :name, include_blank:" -- 選択してください --" %></li>
 
     　<!-- 星マークでの評価 -->
       <div id="star">
         <li><%= f.label :rate,'評価 ' %></li>
-        <li><%= f.hidden_field :rate, id: :review_star %></li>
+        <li>
+          <%= f.hidden_field :rate, id: :review_star %>
+          <span id="score_number"></span>
+        </li>
       </div>
 
       <!-- 評価　javascript -->
       <script>
         $('#star').raty({
-          size     :42,
-          starOff  :'<%= asset_path('star-off.png') %>',
-          starOn   :'<%= asset_path('star-on.png') %>',
-          starHalf :'<%= asset_path('star-half.png') %>',
-          scoreName:'post[rate]',
-          half: true,
+          starOff   :'<%= asset_path('star-off.png') %>',
+          starOn    :'<%= asset_path('star-on.png') %>',
+          starHalf  :'<%= asset_path('star-half.png') %>',
+          scoreName :'review[rate]',
+          round     : { down: .4, full: .6, up: .99 },
+          targetKeep:true,
+          precision :true,
+          half      :true,
+          target    :'#score_number',
+          targetType:'score'
         });
       </script>
 

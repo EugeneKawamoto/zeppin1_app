@@ -5,7 +5,10 @@ class Public::UsersController < ApplicationController
   end
 
   def edit
-    
+    @user = User.find(params[:id])
+    unless current_user.id == @user.id
+      redirect_to public_user_path(current_user.id)
+    end
   end
 
   def update
@@ -14,5 +17,8 @@ class Public::UsersController < ApplicationController
 
   private
 
-  
+  def user_params
+    params.require(:user).permit(:name, :profile_image, :introduction)
+  end
+
 end
