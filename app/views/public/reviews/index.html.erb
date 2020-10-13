@@ -1,1 +1,15 @@
+<div class="col-xs-10 col-xs-offset-2">
 		<%= flash[:notice] %>
+
+	<!-- レビュー一覧 -->
+	<div class="row">
+		<% @reviews.each do |review| %>
+			<div class="col-xs-3">
+				<%= attachment_image_tag review.review_images.first, :image ,size:"145x145" %><br/>
+				<%= attachment_image_tag review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"40x40" %>
+				<%= review.user.name %>
+				<%= review.comment %>
+			</div>
+		<% end %>
+	</div>
+</div>

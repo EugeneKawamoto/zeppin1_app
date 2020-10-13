@@ -1,13 +1,5 @@
 class Public::ReviewsController < ApplicationController
 
-  def index
-    
-  end
-
-  def show
-    
-  end
-
   def new
     @review = Review.new
     @review.review_images.build
@@ -15,7 +7,23 @@ class Public::ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @review.user_id = current_user.id
+    if @review.save
+      flash[:notice] = "投稿は正常に完了しました."
+      redirect_to public_root_path
+    else
+      render action: :new
+    end
   end
+
+  def index
+    @reviews = Review.all
+  end
+
+  def show
+    
+  end
+
 
   def edit
     

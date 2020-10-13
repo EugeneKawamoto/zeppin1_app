@@ -3,7 +3,7 @@
     <h3>新規投稿</h3>
 
     <!-- レビュー新規投稿フォーム -->
-    <%= form_for(@review, url: public_reviews_path, method: :post ) do |f| %>
+  <%= form_for(@review, url: public_reviews_path) do |f| %>
     <table>
       <li><%= f.attachment_field :review_images_images, multiple: true %></li><br/>
 
@@ -17,22 +17,8 @@
       <li><%= f.collection_select :menu_id, Menu.all, :id, :name, include_blank:" -- 選択してください --" %></li>
 
       <!-- メニュー選択のためのセレクトボックスイベントの記載 -->
-      <script>
-      $(document).ready(function(){
-        $("#sel").change(function(){
-          var str = $(this).val();
-          alert(str);
-        });
-      });
-      </script>
 
-      <select id="sel">
-        <option value="01">東京</option>
-        <option value="02">大阪</option>
-        <option value="03">名古屋</option>
-      </select>
-
-    　<!-- 星マークでの評価 -->
+      <!-- 星マークでの評価 -->
       <div id="star">
         <li><%= f.label :rate,'評価 ' %></li>
         <li>
