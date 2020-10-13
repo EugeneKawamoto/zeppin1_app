@@ -14,7 +14,7 @@
       <li><%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, include_blank:" -- 選択してください -- " %></li>
 
       <li><%= f.label :menu_id, "メニュー" %></li>
-      <li><%= f.collection_select :menu_id, Menu.all, :id, :name, include_blank:" -- 選択してください --" %></li>
+      <li><%= f.collection_select :menu_id, Menu.all, :id, :name, include_blank:" -- 選択してください --" %></li><br/>
 
       <!-- メニュー選択のためのセレクトボックスイベントの記載 -->
 

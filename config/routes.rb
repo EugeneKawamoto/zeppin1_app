@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     get 'users/my_page/:id' => 'users#show', as: 'users/my_page'
     resources :users, only: [:edit, :update]
     resources :reviews, only: [:new, :show, :create, :edit, :update, :destroy]
+    resources :restaurants, only: [:index, :show]
     resources :menus, only: [:show]
   end
 end
