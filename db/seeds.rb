@@ -151,7 +151,7 @@ Menu.create!([
 Menu.create!([
   {
     restaurant_id: @restaurants[2].id,
-    name: 'トマトスパゲティ',
+    name: 'うにクリームパスタ',
     price: 980
   },{
     restaurant_id: @restaurants[2].id,
