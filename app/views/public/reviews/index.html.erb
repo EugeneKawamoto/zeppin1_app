@@ -1,13 +1,30 @@
-<div class="col-md-10 col-md-offset-2">
+<div class="col-md-8 col-md-offset-2">
 		<%= flash[:notice] %>
 
 	<!-- レビュー一覧 -->
 	<div class="row">
 		<% @reviews.each do |review| %>
 			<div class="col-md-3">
-				<%= attachment_image_tag review.review_images.first, :image ,size:"145x145" %><br/>
+				<%= link_to public_menu_path(review.menu.id) do %>
+					<%= attachment_image_tag review.review_images.first, :image ,size:"165x165" %>
+				<% end %>
 				<%= attachment_image_tag review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"40x40" %>
 				<%= review.user.name %>
+
+
+        <!--星評価 JabaScript-->
+        <div id="star-rate-<%= review.id %>"><%= review.rate %>点｜</div>
+          <script>
+          $('#star-rate-<%= review.id %>').raty({
+            starOff   : '<%= asset_path('star-off.png') %>',
+            starOn    : '<%= asset_path('star-on.png') %>',
+            starHalf  : '<%= asset_path('star-half.png') %>',
+            half      : true,
+						readOnly  : true,
+            score     : <%= review.rate %>,
+          });
+          </script>
+
 				<%= truncate review.comment %>
 			</div>
 		<% end %>

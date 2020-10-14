@@ -3,6 +3,7 @@ class Public::MenusController < ApplicationController
     @menu = Menu.find(params[:id])
     @restaurant = @menu.restaurant
     @reviews = @menu.reviews
+    # @review_images = @menu.review_images
   end
 
   private
