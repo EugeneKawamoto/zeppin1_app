@@ -8,6 +8,18 @@
 # coding: utf-8
 
 
+# ユーザ情報記載
+User.create!([
+  {
+  name: 'グルメ太郎',
+  email: 'taro@mail',
+  introduction: '私の好きな食べ物は、ロクサンのエビダブルガーリックピザです！',
+  password: 123123
+  }
+])
+
+
+
 # Restaurant情報記載　日本語化必須（coding:utf-8）
 @restaurants = Restaurant.create!([
   {
@@ -167,11 +179,11 @@ Menu.create!([
 # 居酒屋・ぎょーさん
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[3].id,
     name: '羽つき餃子',
     price: 800
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[3].id,
     name: '焼き餃子',
     price: 600
   }
@@ -180,11 +192,11 @@ Menu.create!([
 # カフェ・50s
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[4].id,
     name: 'オリジナルブレンド',
     price: 600
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[4].id,
     name: 'パンケーキ',
     price: 1200
   }
@@ -193,11 +205,11 @@ Menu.create!([
 # 居酒屋・ロクサブロウ
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[5].id,
     name: '焼き鳥',
     price: 1200
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[5].id,
     name: '鍋',
     price: 1200
   }
@@ -206,11 +218,11 @@ Menu.create!([
 # 中華・四国志
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[6].id,
     name: '鶏と唐辛子の唐揚げ',
     price: 1100
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[6].id,
     name: '魚の黒酢あんかけ',
     price: 1200
   }
@@ -219,11 +231,11 @@ Menu.create!([
 #　焼き肉・源太郎
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[7].id,
     name: '牛タン',
     price: 800
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[7].id,
     name: 'スペアリブ',
     price: 700
   }
@@ -232,11 +244,11 @@ Menu.create!([
 #　焼き肉・キングダム　
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[8].id,
     name: '厳選盛',
     price: 1200
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[8].id,
     name: '焼きしゃぶ',
     price: 1200
   }
@@ -245,11 +257,11 @@ Menu.create!([
 #　居酒屋・猫泥棒
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[9].id,
     name: '串揚げ',
     price: 200
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[9].id,
     name: '串カツ',
     price: 240
   }
@@ -258,11 +270,11 @@ Menu.create!([
 #　カレー・インディ
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[10].id,
     name: 'チーズナンセット',
     price: 1200
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[10].id,
     name: 'マトンカレー',
     price: 1200
   }
@@ -271,11 +283,11 @@ Menu.create!([
 #　居酒屋・315
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[11].id,
     name: 'おでん盛',
     price: 1200
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[11].id,
     name: 'お肉盛り',
     price: 1200
   }
@@ -284,11 +296,11 @@ Menu.create!([
 #　カフェ・ラパン
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[12].id,
     name: 'コーヒーゼリー',
     price: 900
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[12].id,
     name: 'カフェラテ',
     price: 700
   }
@@ -297,11 +309,11 @@ Menu.create!([
 #　イタリアン・白い海岸
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[13].id,
     name: 'ピザ',
     price: 1200
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[13].id,
     name: 'スパゲッティ',
     price: 1200
   }
@@ -310,11 +322,11 @@ Menu.create!([
 #　イタリアン・ロストーロ
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[14].id,
     name: '手打ちパスタ',
     price: 1200
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[14].id,
     name: 'グラス・ワイン',
     price: 800
   }
@@ -323,11 +335,11 @@ Menu.create!([
 #　ピザ屋・デ・ロッソ
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[15].id,
     name: '前菜盛り',
     price: 700
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[15].id,
     name: 'ホロホロ鳥のロースト',
     price: 1200
   }
@@ -336,7 +348,7 @@ Menu.create!([
 #　ラーメン・海道
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[16].id,
     name: 'にぼしらーめん',
     price: 900
   }
@@ -345,7 +357,7 @@ Menu.create!([
 #　ラーメン・豚骨道場
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[17].id,
     name: '背脂ラーメン',
     price: 1200
   }
@@ -354,11 +366,11 @@ Menu.create!([
 #　居酒屋・魚介バル
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[18].id,
     name: 'お刺身盛',
     price: 1100
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[18].id,
     name: 'アクアパッツァ',
     price: 1200
   }
@@ -367,11 +379,11 @@ Menu.create!([
 #　居酒屋・隠れ家
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[19].id,
     name: '痛風鍋',
     price: 1000
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[19].id,
     name: '本日の刺身盛り',
     price: 800
   }
@@ -380,11 +392,11 @@ Menu.create!([
 #　居酒屋・食い倒れ
 Menu.create!([
   {
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[20].id,
     name: 'お肉の盛り合わせ',
     price: 1200
   },{
-    restaurant_id: @restaurants[1].id,
+    restaurant_id: @restaurants[20].id,
     name: 'クラフトビール',
     price: 700
   }

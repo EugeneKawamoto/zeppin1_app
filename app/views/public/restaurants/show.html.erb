@@ -7,5 +7,7 @@
 <h3> メニュー一覧　</h3>
 
 	<% @menus.each do |menu| %>
-		<%= menu.name %>
+  <table>
+		<li><%= link_to menu.name, public_menu_path(menu.id) %></li>
+  </table>
 	<% end %>

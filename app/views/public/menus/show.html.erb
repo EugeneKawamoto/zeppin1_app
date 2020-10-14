@@ -1,0 +1,9 @@
+<h3><%= @menu.name %>（<%= @restaurant.name %>）の評判</h3>
+
+<h4>レビュー一覧<small>（<%= @reviews.count %>）</small></h4>
+		<% @reviews.each do |review| %>
+				<%= attachment_image_tag review.review_images.first, :image ,size:"145x145" %><br/>
+				<%= attachment_image_tag review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"40x40" %>
+				<%= review.user.name %>
+				<%= review.comment %>
+		<% end %>
