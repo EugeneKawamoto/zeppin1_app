@@ -17,7 +17,7 @@ class Public::ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = Review.all
+    @reviews = Review.all.order(created_at: :desc).page(params[:page]).per(12)
   end
 
   def show

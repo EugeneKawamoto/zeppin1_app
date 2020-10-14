@@ -8,6 +8,22 @@
     <%= @menu.price %>
     <%= @menu.restaurant.name %>
 
+      <!--平均の星評価 JabaScript-->
+    <span id="star-rate-<%= @menu.id %>"><%= @menu.reviews.average(:rate).to_f.round(1) %>点｜</span>
+      <script>
+      $('#star-rate-<%= @menu.id %>').raty({
+        starOff   : '<%= asset_path('star-off.png') %>',
+        starOn    : '<%= asset_path('star-on.png') %>',
+        starHalf  : '<%= asset_path('star-half.png') %>',
+        half      : true,
+        readOnly  : true,
+        score     : <%= @menu.reviews.average(:rate).to_f.round(1) %>
+      });
+      </script><br/>
+
+    <%= link_to "このメニューを評価する", new_public_review_path, class: "btn btn-primary"%>
+
+
   <h4>レビュー一覧<small>（<%= @reviews.count %>）</small></h4>
 
 
@@ -22,7 +38,7 @@
         <%= attachment_image_tag review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"50x50" %>
         <strong><%= review.user.name %></strong> |
 
-        <!--星評価 JabaScript-->
+        <!--個別星評価 JabaScript-->
         <span id="star-rate-<%= review.id %>"><%= review.rate %>点｜</span>
           <script>
           $('#star-rate-<%= review.id %>').raty({
@@ -39,5 +55,7 @@
       </div>
     </div><br/>
 		<% end %>
+
+    <%= paginate @reviews %>
 
 </div>

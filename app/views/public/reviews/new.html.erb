@@ -16,8 +16,6 @@
       <li><%= f.label :menu_id, "メニュー" %></li>
       <li><%= f.collection_select :menu_id, Menu.all, :id, :name, include_blank:" -- 選択してください --" %></li><br/>
 
-      <!-- メニュー選択のためのセレクトボックスイベントの記載 -->
-
       <!-- 星マークでの評価 -->
       <div id="star">
         <li><%= f.label :rate,'評価 ' %></li>
@@ -27,7 +25,7 @@
         </li>
       </div>
 
-      <!-- 評価　javascript -->
+      <!-- 評価 javascript -->
       <script>
         $('#star').raty({
           starOff   :'<%= asset_path('star-off.png') %>',
