@@ -1,5 +1,12 @@
+<div class="col-md-8 col-md-offset-4">
+
 		<% @restaurants.each do |restaurant| %>
-				<%= link_to restaurant.name, public_restaurant_path(restaurant.id) %>
-				<%= restaurant.address %>
-				<%= restaurant.phone %><br/>
+
+				<h4><%= link_to restaurant.name, public_restaurant_path(restaurant.id) %></h4>
+				<li><%= restaurant.address %></li>
+				<li><%= restaurant.phone %></li><br/>
 		<% end %>
+
+    <%= paginate @restaurants %>
+
+</div>

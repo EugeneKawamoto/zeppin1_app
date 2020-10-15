@@ -1,30 +1,31 @@
-  <h3>新規投稿</h3>
+  <h4>新規投稿</h4>
 
-  <%= form_for(review, url: public_reviews_path) do |f| %>
-    <table>
-      <li><%= f.attachment_field :review_images_images, multiple: true %></li><br/>
+  <%= form_for(review, url: public_reviews_path, html: { class: "form-horizontal" } )do |f| %>
+    <div class="form-group">
+      <%= f.label :review_images_images, "画像", class:"col-sm-2" %>
+      <%= f.attachment_field :review_images_images, multiple: true, class:"col-sm-6" %>
+    </div>
 
-      <li><%= f.label :comment, "コメント" %></li>
-      <li><%= f.text_area :comment %></li>
+    <div class="form-group">
+      <%= f.label :comment, "コメント", class:"col-sm-2" %>
+      <%= f.text_area :comment, class:"col-sm-6" %>
+    </div>
 
-      <li><%= f.hidden_field :restaurant_id, :value => menu.restaurant.id %></li>
+      <%= f.hidden_field :restaurant_id, :value => menu.restaurant.id %>
+      <%= f.hidden_field :menu_id, :value => menu.id %>
 
-      <li><%= f.hidden_field :menu_id, :value => menu.id %></li><br/>
-
+    <div class="form-group">
       <div id="star">
-        <li><%= f.label :rate,'評価 ' %></li>
-        <li>
-          <%= f.hidden_field :rate, id: :review_star %>
-          <span id="score_number"></span>
-        </li>
+        <%= f.label :rate,'評価', class:"col-sm-2" %>
+          <%= f.hidden_field :rate, id: :review_star, class:"col-sm-6" %>
+          <span id="score_number"></span> 点 |
       </div>
+    </div>
 
-        <li><%= f.submit '投稿する', class:"btn btn-default"%></li>
-
-    </table>
+    <div class="form-group">
+      <%= f.submit 'このメニューのレビューを投稿する', class:"btn btn-primary col-sm-offset-3 col-sm-5 "%>
+    </div>
   <% end %>
-
-
 
 <script>
   $('#star').raty({

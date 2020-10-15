@@ -1,13 +1,17 @@
-<h3>レストラン詳細ページ</h3>
+<div class="col-md-8 col-md-offset-4">
 
-<%= @restaurant.name %>
-<%= @restaurant.address %>
-<%= @restaurant.phone %>
+	<h3>レストラン詳細ページ</h3>
 
-<h3> メニュー一覧 </h3>
+	<%= @restaurant.name %>
+	<%= @restaurant.address %>
+	<%= @restaurant.phone %>
 
-	<% @menus.each do |menu| %>
-  <table>
-		<li><%= link_to menu.name, public_menu_path(menu.id) %></li>
-  </table>
-	<% end %>
+	<h3> メニュー一覧（<%= @menus.count %>） </h3>
+
+		<% @menus.each do |menu| %>
+		<table>
+			<li><%= link_to menu.name, public_menu_path(menu.id) %></li>
+		</table>
+		<% end %>
+
+</div>

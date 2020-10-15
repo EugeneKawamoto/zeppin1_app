@@ -1,9 +1,5 @@
 class Public::ReviewsController < ApplicationController
 
-  def new
-    @review = Review.new
-    @review.review_images.build
-  end
 
   def create
     @review = Review.new(review_params)
@@ -22,12 +18,12 @@ class Public::ReviewsController < ApplicationController
   end
 
   def show
-    
+    @review = Review.find(params[:id])
   end
 
 
   def edit
-    
+    @review = Review.find(params[:id])
   end
 
   def update
