@@ -1,0 +1,42 @@
+  <h3>新規投稿</h3>
+
+  <%= form_for(review, url: public_reviews_path) do |f| %>
+    <table>
+      <li><%= f.attachment_field :review_images_images, multiple: true %></li><br/>
+
+      <li><%= f.label :comment, "コメント" %></li>
+      <li><%= f.text_area :comment %></li>
+
+      <li><%= f.hidden_field :restaurant_id, :value => menu.restaurant.id %></li>
+
+      <li><%= f.hidden_field :menu_id, :value => menu.id %></li><br/>
+
+      <div id="star">
+        <li><%= f.label :rate,'評価 ' %></li>
+        <li>
+          <%= f.hidden_field :rate, id: :review_star %>
+          <span id="score_number"></span>
+        </li>
+      </div>
+
+        <li><%= f.submit '投稿する', class:"btn btn-default"%></li>
+
+    </table>
+  <% end %>
+
+
+
+<script>
+  $('#star').raty({
+    starOff   :'<%= asset_path('star-off.png') %>',
+    starOn    :'<%= asset_path('star-on.png') %>',
+    starHalf  :'<%= asset_path('star-half.png') %>',
+    scoreName :'review[rate]',
+    round     : { down: .4, full: .6, up: .99 },
+    targetKeep:true,
+    precision :true,
+    half      :true,
+    target    :'#score_number',
+    targetType:'score'
+  });
+</script>

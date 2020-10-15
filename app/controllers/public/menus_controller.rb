@@ -2,8 +2,9 @@ class Public::MenusController < ApplicationController
   def show
     @menu = Menu.find(params[:id])
     @restaurant = @menu.restaurant
+    @review = Review.new
+    @review.review_images.build
     @reviews = @menu.reviews.order(created_at: :desc).page(params[:page]).per(5)
-    # @review_images = @menu.review_images
   end
 
   private

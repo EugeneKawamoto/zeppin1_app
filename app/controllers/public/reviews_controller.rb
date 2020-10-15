@@ -9,10 +9,11 @@ class Public::ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     if @review.save
-      flash[:notice] = "投稿は正常に完了しました."
+      flash[:notice] = "投稿は正常に完了しました。"
       redirect_to public_root_path
     else
-      render action: :new
+      flash[:notice] = "初めからやり直してください。"
+      render action: :index
     end
   end
 
