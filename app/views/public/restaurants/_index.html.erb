@@ -1,0 +1,6 @@
+<% restaurants.each do |restaurant| %>
+
+  <h4><%= link_to restaurant.name, public_restaurant_path(restaurant.id) %></h4>
+	<li><%= restaurant.address %></li>
+	<li><%= restaurant.phone %></li><br/>
+<% end %>

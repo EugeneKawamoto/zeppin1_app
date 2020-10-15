@@ -9,6 +9,15 @@ class Public::RestaurantsController < ApplicationController
     @menus = @restaurant.menus
   end
 
+  def search
+    @restaurant_or_menu = params[:option]
+    if @restaurant_or_menu == "1"
+      @restaurants = Restaurant.search(params[:search], @restaurant_or_menu)
+    else
+      @menus = Menu.search(params[:search], @restaurant_or_menu)
+    end
+  end
+
   private
 
   def restaurant_params

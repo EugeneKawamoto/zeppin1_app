@@ -1,0 +1,13 @@
+<% if @restaurant_or_menu == "1"%>
+
+  <h4>レストラン</h4>
+    <%= render 'public/restaurants/index', restaurants: @restaurants %>
+
+<% elsif @restaurant_or_menu == "2" %>
+
+  <h4>メニュー</h4>
+  <%= render 'public/menus/index', menus: @menus %>
+
+<% else %>
+  <h4>検索結果が一致しませんでした。</h4>
+<% end %>
