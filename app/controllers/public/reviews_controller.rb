@@ -24,14 +24,27 @@ class Public::ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
+    @menu = @review.menu
+    unless current_user.id == @review.user.id
+      redirect_to public_root_path
+    end
   end
 
   def update
-
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      flash[:notice] = "レビューの更新に成功しました。"
+      redirect_to public_review_path(@review.id)
+    else
+      render action: :edit
+    end
   end
 
   def destroy
-    
+    @review = Review.find(params[:id])
+    @review.destroy
+    flash[:notice] = "レビューの削除に成功しました。"
+    redirect_to public_root_path
   end
 
   private
