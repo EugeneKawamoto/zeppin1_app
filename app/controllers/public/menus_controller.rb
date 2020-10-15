@@ -7,6 +7,7 @@ class Public::MenusController < ApplicationController
     @reviews = @menu.reviews.order(created_at: :desc).page(params[:page]).per(5)
   end
 
+  
   private
 
   def menu_params

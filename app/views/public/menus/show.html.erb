@@ -2,7 +2,7 @@
   <h3><%= @menu.name %>（<%= @restaurant.name %>）の評判</h3>
 
   <h4>メニュー情報</h4>
-    <%= attachment_image_tag @reviews.first.review_images.first, :image ,size:"145x145" %>
+    <%= attachment_image_tag @reviews.first.review_images.first, :image, fallback: "no_image1.jpg", size:"145x145" %>
     <%= @menu.name %>
     <%= @menu.price %>
     <%= @menu.restaurant.name %>

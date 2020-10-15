@@ -31,7 +31,7 @@
 <div class="col-md-8 col-md-offset-4">
 
   <% if @review.user.id == current_user.id %>
-    <%= link_to "レビューを編集する", edit_public_review_path(@review), class:"btn btn-success col-sm-4" %>
+    <%= link_to "レビューを編集する", edit_public_review_path(@review), class:"btn-sm btn-success" %>
     <%= link_to "レビューを削除する", "#{@review.id}", method: :delete, "data-confirm" => "本当に消しますか?", class:"btn-sm btn-danger" %></td>
   <% end %>
 
