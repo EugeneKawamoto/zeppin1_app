@@ -1,5 +1,6 @@
 <% restaurants.each do |restaurant| %>
 
+  <%# attachment_image_tag restaurant.review.first.review_images.first, :image ,size:"165x165" %>
   <h4><%= link_to restaurant.name, public_restaurant_path(restaurant.id) %></h4>
 	<li><%= restaurant.address %></li>
 	<li><%= restaurant.phone %></li><br/>

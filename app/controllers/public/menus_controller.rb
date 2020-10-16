@@ -1,8 +1,9 @@
 class Public::MenusController < ApplicationController
-  
+
   def index
     @menus = Menu.all
   end
+
   def show
     @menu = Menu.find(params[:id])
     @restaurant = @menu.restaurant
@@ -11,7 +12,6 @@ class Public::MenusController < ApplicationController
     @reviews = @menu.reviews.order(created_at: :desc).page(params[:page]).per(5)
   end
 
-  
   private
 
   def menu_params

@@ -18,37 +18,47 @@
             <header>
               <div class="header-content">
                 <%= link_to '絶品グルメ', public_root_path, class: "logo" %>
-                <ul class="nav navbar-nav navbar-right">
+
+                <div class="navbar-search">
+                  <%= form_tag(public_search_path, method: :get) do %>
+                    <%= select_tag(:option, options_for_select([["レストラン", "1"],["メニュー","2"]]))%>
+                    <%= text_field_tag :search, '', placeholder: "ロクサン ピザ"%>
+                    <%= submit_tag '検索', class: "btn btn-primary" %>
+                  <% end %>
+                </div>
+
+                <ul class="nav navbar-nav">
                   <li><%= link_to 'お店を探す', public_restaurants_path %></li>
                   <li><%= link_to 'マイページ', public_users_my_page_path(current_user.id) %></li>
                   <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
                 </ul>
-                <%= form_tag(public_search_path, method: :get) do %>
-                  <%= select_tag(:option, options_for_select([["レストラン", "1"],["メニュー","2"]]))%>
-                  <%= text_field_tag :search, '', placeholder: "ロクサン ピザ"%>
-                  <%= submit_tag '検索', class: "btn btn-primary" %>
-                <% end %>
               </div>
             </header>
+
           <% else %>
+
             <header>
               <div class="header-content">
                 <%= link_to '絶品グルメ', public_root_path, class: "logo" %>
-                <ul class="nav navbar-nav navbar-right">
+                <div class="navbar-search">
+                  <%= form_tag(public_search_path, method: :get) do %>
+                    <%= select_tag(:option, options_for_select([["レストラン", "1"],["メニュー","2"]]))%>
+                    <%= text_field_tag :search, '', placeholder: "ロクサン ピザ"%>
+                    <%= submit_tag '検索', class: "btn btn-primary" %>
+                  <% end %>
+                </div>
+
+                <ul class="nav navbar-nav">
                   <li><%= link_to 'About', public_homes_about_path %></li>
                   <li><%= link_to '新規登録', new_user_registration_path %></li>
                   <li><%= link_to 'ログイン', new_user_session_path %></li>
                 </ul>
-                <%= form_tag(public_search_path, method: :get) do %>
-                  <%= select_tag(:option, options_for_select([["レストラン", "1"],["メニュー","2"]]))%>
-                  <%= text_field_tag :search, '', placeholder: "ロクサン ピザ"%>
-                  <%= submit_tag '検索', class: "btn btn-primary" %>
-                <% end %>
               </div>
             </header>
           <% end %>
         </div>
       </div>
+
       <div class="container">
         <%= yield %>
       </div>

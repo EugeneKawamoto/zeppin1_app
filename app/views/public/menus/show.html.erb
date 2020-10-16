@@ -22,7 +22,7 @@
 
       <div class="col-md-3">
         <%= link_to public_review_path(review.id) do %>
-          <%= attachment_image_tag review.review_images.first, :image ,size:"145x145" %>
+          <%= attachment_image_tag review.review_images.first, :image ,fallback: "no_image1.jpg", size:"145x145" %>
         <% end %>
       </div>
 

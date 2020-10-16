@@ -13,6 +13,7 @@
 				<%= review.user.name %>
 
         <div id="star-rate-<%= review.id %>"><%= review.rate %>点｜</div>
+
           <script>
           $('#star-rate-<%= review.id %>').raty({
             starOff   : '<%= asset_path('star-off.png') %>',
