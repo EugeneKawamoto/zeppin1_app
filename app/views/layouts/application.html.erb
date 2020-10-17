@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://kit.fontawesome.com/4e73ef2403.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,18 +13,18 @@
   <body>
     <div id="wrapper">
 
-      <nav class="navbar navbar-invers navbar-static-top">
+      <nav class="navbar navbar-static-top">
         <div class="container">
           <% if user_signed_in? %>
             <header>
               <div class="header-content">
-                <%= link_to '絶品グルメ', public_root_path, class: "logo" %>
+                <%= link_to ' 絶品グルメ', public_root_path, class: "fas fa-utensils logo" %>
 
                 <div class="navbar-search">
                   <%= form_tag(public_search_path, method: :get) do %>
                     <%= select_tag(:option, options_for_select([["レストラン", "1"],["メニュー","2"]]))%>
                     <%= text_field_tag :search, '', placeholder: "ロクサン ピザ"%> <%# ''空欄を入れることでplaceholderを表示 %>
-                    <%= submit_tag '検索', class: "btn btn-primary" %>
+                    <%= submit_tag '検索', class: "btn btn-default" %>
                   <% end %>
                 </div>
 
@@ -39,12 +40,12 @@
 
             <header>
               <div class="header-content">
-                <%= link_to '絶品グルメ', public_root_path, class: "logo" %>
+                <%= link_to ' 絶品グルメ', public_root_path, class: "fas fa-utensils logo" %>
                 <div class="navbar-search">
                   <%= form_tag(public_search_path, method: :get) do %>
                     <%= select_tag(:option, options_for_select([["レストラン", "1"],["メニュー","2"]]))%>
                     <%= text_field_tag :search, '', placeholder: "ロクサン ピザ"%> <%# ''空欄を入れることでplaceholderを表示 %>
-                    <%= submit_tag '検索', class: "btn btn-primary" %>
+                    <%= submit_tag '検索', class: "btn btn-default" %>
                   <% end %>
                 </div>
 
@@ -63,7 +64,9 @@
         <%= yield %>
       </div>
 
-      <footer>Copyright © Zeppin Gourumet All Rights Reserved.</footer>
+      <div class="container">
+        <footer>Copyright © Zeppin Gourumet All Rights Reserved.</footer>
+      </div>
     </div>
   </body>
 

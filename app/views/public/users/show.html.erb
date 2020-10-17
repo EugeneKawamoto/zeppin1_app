@@ -1,23 +1,22 @@
-<div class="col-md-8 col-md-offset-4">
+<div class="col-md-10 col-md-offset-2">
 		<%= flash[:notice] %>
 
-  <h2>マイページ</h2>
-  <div class="row">
-    <div class="col-xs-4">
+  <div class="row mypage">
+    <div class="col-md-2">
       <%= attachment_image_tag current_user, :profile_image, :fill, 300, 300, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"100x100"%>
     </div>
 
-    <div class="col-xs-4">
+    <div class="col-md-4">
       <strong><%= current_user.name %></strong>
     </div>
 
-    <div class="col-xs-4 offset-4">
+    <div class="col-md-4">
         <% if @user.id == current_user.id %>
           <%= link_to "編集する", edit_public_user_path(@user), class:"btn btn-primary" %><br/>
         <% end %>
     </div>
 
-    <div class="user_introduction">
+    <div class="col-md-8 col-md-offset-4 user_introduction">
       <%= current_user.introduction %><br/>
     </div>
 
@@ -26,13 +25,16 @@
 
   <div class="row">
     <div class="col-md-6">
-      <h3>投稿一覧</h3>
+      <h3>レビュー一覧</h3>
 
+  <%# todo:部分テンプレート %>
 	<% @reviews.each do |review| %>
     <div class="row">
 
       <div class="col-md-4">
-        <%= attachment_image_tag review.review_images.first, :image ,size:"145x145" %>
+				<%= link_to public_review_path(review.id) do %>
+          <%= attachment_image_tag review.review_images.first, :image ,size:"145x145" %>
+        <% end %>
       </div>
 
       <div class="col-md-8">
@@ -60,7 +62,20 @@
     </div>
 
     <div class="col-md-6">
-      <h3>ブックマーク一覧</h3>
+      <h3><i class="fas fa-bookmark"></i> ブックマーク一覧</h3>
+      <% if @bookmarks.present? %>
+      <%# todo: reviewから写真を表示したい %>
+        <%# link_to public_menu_path(menu.id) do %>
+          <%# attachment_image_tag review.review_images.first, :image ,size:"145x145" %>
+        <%# end %>
+        <% @bookmarks.each do |bookmark| %>
+          <%= bookmark.menu.name %>
+        <% end  %>
+      <% else %>
+        <h4>ブックマークはまだ登録されていません！<br/>
+            「検索」からお気に入りのメニューを探してみてください！
+        </h4>
+      <% end %>
     </div>
 
 </div>

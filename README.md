@@ -44,8 +44,8 @@ https://docs.google.com/spreadsheets/d/10pVjLpwzXf_CYbOYnmY3KiBRRaQ29r_XGBwHcIVs
 
 ## 使用素材
 - PAKUTASO
-- desingevo
-- ICOOON MONO
+- Google Fonts
+- Font Awesom
 - お名前.com
 - MATERIAL DESIGN
 - EC design

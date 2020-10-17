@@ -2,27 +2,36 @@
   <h3><%= @menu.name %>（<%= @restaurant.name %>）の評判</h3>
 
   <h4>メニュー情報</h4>
-  <% if @reviews.present? %>
-    <%= attachment_image_tag @reviews.first.review_images.first, :image, size:"145x145" %>
-  <% else %>
-    <%= image_tag 'no_image1.jpg',size:"145x145"%>
-  <% end %>
-    <%= @menu.name %>
-    <%= @menu.price %>円
-    <%= @menu.restaurant.name %>
-    <span id="star-rate-<%= @menu.id %>"><%= @menu.reviews.average(:rate).to_f.round(1) %>点｜</span>
+  <div class="row">
+    <div class="col-md-3">
+      <% if @reviews.present? %>
+        <%= attachment_image_tag @reviews.first.review_images.first, :image, size:"145x145" %>
+      <% else %>
+        <%= image_tag 'no_image1.jpg',size:"145x145"%>
+      <% end %>
+    </div>
 
+    <div class="col-md-8">
+      <div class="menu-name"><%= @menu.name %></div>
+      <div class="menu-price"><%= @menu.price %>円</div>
+      <div class="restaurant-name"><%= @menu.restaurant.name %></div>
+      <div id="star-rate-<%= @menu.id %>"><%= @menu.reviews.average(:rate).to_f.round(1) %>点｜</div>
+
+      <div class="bookmark">
         <% if @menu.bookmarked_by?(current_user) %>
           <%= link_to public_menu_bookmarks_path(@menu), method: :DELETE do %>
             <i class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
             <%= @menu.bookmarks.count %>
           <% end %>
         <% else %>
-            <%= link_to public_menu_bookmarks_path(@menu), method: :POST do %>
-              <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
-              <%= @menu.bookmarks.count %>
-            <% end %>
+          <%= link_to public_menu_bookmarks_path(@menu), method: :POST do %>
+            <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
+            <%= @menu.bookmarks.count %>
+          <% end %>
         <% end %>
+      </div>
+    </div>
+  </div>
 
     <br/>
 
@@ -62,7 +71,7 @@
 
         <div class="review-comment"><%= review.comment %></div>
       </div>
-    </div>
+    </div><br/>
 	<% end %>
 
     <%= paginate @reviews %>

@@ -1,4 +1,5 @@
 class Public::MenusController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :bookmarks]
 
   def index
     @menus = Menu.all
