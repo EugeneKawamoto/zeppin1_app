@@ -1,6 +1,7 @@
 <% menus.each do |menu| %>
-
-	<li>メニュー名：<%= link_to menu.name, public_menu_path(menu.id) %></li>
-	<li>値段：<%= menu.price %>円</li>
-  <li>店舗名：<%= menu.restaurant.name %></li><br />
+	<div class="menu-index">
+		<li>メニュー名：<%= link_to menu.name, public_menu_path(menu.id) %></li>
+		<li>値段：<%= menu.price %>円</li>
+		<li>店舗名：<%= menu.restaurant.name %></li><br />
+	</div>
 <% end %>

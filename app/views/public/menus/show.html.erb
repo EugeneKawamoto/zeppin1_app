@@ -2,12 +2,29 @@
   <h3><%= @menu.name %>（<%= @restaurant.name %>）の評判</h3>
 
   <h4>メニュー情報</h4>
-    <%= attachment_image_tag @reviews.first.review_images.first, :image, fallback: "no_image1.jpg", size:"145x145" %>
+  <% if @reviews.present? %>
+    <%= attachment_image_tag @reviews.first.review_images.first, :image, size:"145x145" %>
+  <% else %>
+    <%= image_tag 'no_image1.jpg',size:"145x145"%>
+  <% end %>
     <%= @menu.name %>
-    <%= @menu.price %>
+    <%= @menu.price %>円
     <%= @menu.restaurant.name %>
     <span id="star-rate-<%= @menu.id %>"><%= @menu.reviews.average(:rate).to_f.round(1) %>点｜</span>
-　　<br/>
+
+        <% if @menu.bookmarked_by?(current_user) %>
+          <%= link_to public_menu_bookmarks_path(@menu), method: :DELETE do %>
+            <i class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
+            <%= @menu.bookmarks.count %>
+          <% end %>
+        <% else %>
+            <%= link_to public_menu_bookmarks_path(@menu), method: :POST do %>
+              <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
+              <%= @menu.bookmarks.count %>
+            <% end %>
+        <% end %>
+
+    <br/>
 
     <div class="review-form">
       <%= render 'public/reviews/form', review: @review, menu: @menu %>
@@ -52,7 +69,6 @@
 
 </div>
 
-<%# 平均評価 %>
 <script>
 $('#star-rate-<%= @menu.id %>').raty({
   starOff   : '<%= asset_path('star-off.png') %>',

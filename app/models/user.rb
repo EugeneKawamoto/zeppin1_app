@@ -5,13 +5,12 @@ class User < ApplicationRecord
         :recoverable, :rememberable, :validatable
 
   has_many :reviews
+  has_many :bookmarks, dependent: :destroy
 
   attachment :profile_image
-
   validates :introduction, length: { maximum: 250 }, allow_blank: true
 
 
-  # 簡単ログイン
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64

@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     resources :users, only: [:edit, :update]
     resources :reviews, only: [:show, :create, :edit, :update, :destroy]
     resources :restaurants, only: [:index, :show]
-    resources :menus, only: [:index, :show]
+    resources :menus, only: [:index, :show] do
+      resource :bookmarks, only: [:create, :destroy]
+    end
   end
 end

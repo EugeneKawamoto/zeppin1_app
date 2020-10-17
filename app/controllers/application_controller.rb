@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # 後日admine側追加時に場合分け
+  # todo: adominを追加する際に再度場合分けを行う。
   def after_sign_in_path_for(resource)
     public_root_path
   end
@@ -16,7 +16,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email])
   end
 
-  # ゲストユーザの変更不可
   def check_guest
     email = resource&.email || params[:user][:email].downcase
     if email == 'guest@example.com'

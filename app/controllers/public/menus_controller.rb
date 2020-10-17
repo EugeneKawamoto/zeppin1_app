@@ -12,6 +12,10 @@ class Public::MenusController < ApplicationController
     @reviews = @menu.reviews.order(created_at: :desc).page(params[:page]).per(5)
   end
 
+  def bookmarks
+    @menus = current_user.bookmark_menus.includes(:user).recent
+  end
+
   private
 
   def menu_params
