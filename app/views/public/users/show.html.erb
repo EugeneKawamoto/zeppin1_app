@@ -42,9 +42,9 @@
         <strong><%= review.user.name %></strong> |
 
         <%# 個別星評価 JabaScript %>
-        <span id="star-rate-<%= review.id %>"><%= review.rate %>点｜</span>
+        <span id="star-rate-menu<%= review.id %>"><%= review.rate %>点｜</span>
           <script>
-          $('#star-rate-<%= review.id %>').raty({
+          $('#star-rate-menu<%= review.id %>').raty({
             starOff   : '<%= asset_path('star-off.png') %>',
             starOn    : '<%= asset_path('star-on.png') %>',
             starHalf  : '<%= asset_path('star-half.png') %>',
@@ -76,7 +76,19 @@
             <div class="col-md-8">
               <%= bookmark.menu.name %>
               <div class="restaurant-name"><%= bookmark.menu.restaurant.name %></div>
+              <div id="star-rate-<%= bookmark.menu.id %>"><%= bookmark.menu.reviews.average(:rate).to_f.round(1) %>点｜</div>
+
             </div>
+            <script>
+              $('#star-rate-<%= bookmark.menu.id %>').raty({
+                starOff   : '<%= asset_path('star-off.png') %>',
+                starOn    : '<%= asset_path('star-on.png') %>',
+                starHalf  : '<%= asset_path('star-half.png') %>',
+                half      : true,
+                readOnly  : true,
+                score     : <%= bookmark.menu.reviews.average(:rate).to_f.round(1) %>
+              });
+              </script>
           </div><br/>
         <% end  %>
       <% else %>
@@ -87,3 +99,4 @@
     </div>
 
 </div>
+

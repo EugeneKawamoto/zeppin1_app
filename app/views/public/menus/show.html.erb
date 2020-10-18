@@ -1,4 +1,7 @@
 <div class="col-md-8 col-md-offset-2">
+	<div class="flash-message">
+		<%= flash[:notice] %>
+	</div>
 
     <% if @review.errors.any? %>
       <div id="error_explanation" class="alert alert-danger">

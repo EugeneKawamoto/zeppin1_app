@@ -9,9 +9,11 @@ class Public::ReviewsController < ApplicationController
       flash[:notice] = "投稿は正常に完了しました。"
       redirect_to public_root_path
     else
-      flash[:notice] = "初めからやり直してください。"
-      #render tenmlate: 'public/menu/show'
-      # redirect_to public_menu_path(@review.menu.id)
+      # todo:ajax導入
+      @menu = Menu.find(params[:review][:menu_id])
+      @restaurant = @menu.restaurant
+      @reviews = @menu.reviews.order(created_at: :desc).page(params[:page]).per(5)
+      render template: 'public/menus/show'
     end
   end
 
