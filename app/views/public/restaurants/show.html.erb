@@ -1,10 +1,15 @@
 <div class="col-md-8 col-md-offset-2">
 
-	<h3>レストラン詳細ページ</h3>
-
-	<%= @restaurant.name %>
-	<%= @restaurant.address %>
-	<%= @restaurant.phone %>
+	<h3><%= @restaurant.name %>の情報</h3>
+	<div class= row>
+		<div class="col-md-8">
+      <div id="map"></div>
+		</div>
+		<div class="col-md-4">
+			<%= @restaurant.address %>
+			<%= @restaurant.phone %>
+		</div>
+	</div>
 
 	<h3> メニュー一覧 <small>(<%= @menus.count %>)</small></h3>
 
@@ -15,3 +20,13 @@
 		<% end %>
 
 </div>
+
+<script>
+	var MyLatLng = new google.maps.LatLng(35.6811673, 139.7670516);
+	var Options = {
+		zoom     : 15,
+		center   : MyLatLng,
+		mapTypeId: 'roadmap'
+	};
+	var map = new google.maps.Map(document.getElementById('map'), Options);
+</script>
