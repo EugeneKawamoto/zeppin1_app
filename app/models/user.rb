@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   attachment :profile_image
   validates :introduction, length: { maximum: 250 }, allow_blank: true
+  validates :name, presence: true, length: { in: 2..20}
 
 
   def self.guest

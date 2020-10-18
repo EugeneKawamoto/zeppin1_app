@@ -1,8 +1,19 @@
 <div class="col-md-8 col-md-offset-2">
+
+    <% if @review.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <ul>
+          <% @review.errors.full_messages.each do |message| %>
+            <li><%= message +"error" %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
   <h3><%= @menu.name %>（<%= @restaurant.name %>）の評判</h3>
 
   <h4>メニュー情報</h4>
-  <div class="row">
+  <div class="row menu-show">
     <div class="col-md-3">
       <% if @reviews.present? %>
         <%= attachment_image_tag @reviews.first.review_images.first, :image, size:"145x145" %>
@@ -20,12 +31,12 @@
       <div class="bookmark">
         <% if @menu.bookmarked_by?(current_user) %>
           <%= link_to public_menu_bookmarks_path(@menu), method: :DELETE do %>
-            <i class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
+            <i class="fas fa-bookmark" aria-hidden="true" style="color: red;"></i>
             <%= @menu.bookmarks.count %>
           <% end %>
         <% else %>
           <%= link_to public_menu_bookmarks_path(@menu), method: :POST do %>
-            <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
+            <i class="fas fa-bookmark" aria-hidden="true" style="color: gray;"></i>
             <%= @menu.bookmarks.count %>
           <% end %>
         <% end %>
@@ -44,7 +55,7 @@
 
 
 	<% @reviews.each do |review| %>
-    <div class="row">
+    <div class="row review-show">
 
       <div class="col-md-3">
         <%= link_to public_review_path(review.id) do %>

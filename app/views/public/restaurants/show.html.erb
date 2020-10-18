@@ -1,4 +1,4 @@
-<div class="col-md-8 col-md-offset-4">
+<div class="col-md-8 col-md-offset-2">
 
 	<h3>レストラン詳細ページ</h3>
 
@@ -6,7 +6,7 @@
 	<%= @restaurant.address %>
 	<%= @restaurant.phone %>
 
-	<h3> メニュー一覧（<%= @menus.count %>） </h3>
+	<h3> メニュー一覧 <small>(<%= @menus.count %>)</small></h3>
 
 		<% @menus.each do |menu| %>
 		<table>

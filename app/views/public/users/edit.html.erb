@@ -1,5 +1,13 @@
 <div class="col-md-8 col-md-offset-4">
-
+    <% if @user.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message +"error" %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   <h3>ユーザ情報更新</h3>
 
     <%= form_for(@user, url:public_user_path) do |f| %>

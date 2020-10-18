@@ -1,13 +1,26 @@
-<% if @restaurant_or_menu == "1"%>
+<div class="col-md-8 col-md-offset-2">
 
-  <h4>レストラン</h4>
-    <%= render 'public/restaurants/index', restaurants: @restaurants %>
+  <% if @restaurant_or_menu == "1"%>
 
-<% elsif @restaurant_or_menu == "2" %>
+    <h4>レストラン</h4>
+    <%# todo: if文の簡略化 %>
+    <% if @restaurants.present? %>
+      <%= render 'public/restaurants/index', restaurants: @restaurants %>
+      <%= paginate @restaurants %>
+    <% else %>
+      <h4>検索結果が一致しませんでした。</h4>
+    <% end %>
+  <% elsif @restaurant_or_menu == "2" %>
 
-  <h4>メニュー</h4>
-  <%= render 'public/menus/index', menus: @menus %>
+    <h4>メニュー</h4>
+    <% if @menus.present? %>
+      <%= render 'public/menus/index', menus: @menus %>
+      <%= paginate @menus%>
+    <% else %>
+    <h4>検索結果が一致しませんでした。</h4>
+    <% end %>
+  <% else %>
+    <h4>検索結果が一致しませんでした。</h4>
+  <% end %>
 
-<% else %>
-  <h4>検索結果が一致しませんでした。</h4>
-<% end %>
+</div>

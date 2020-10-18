@@ -4,12 +4,14 @@ class Public::ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
+    # binding.pry
     if @review.save
       flash[:notice] = "投稿は正常に完了しました。"
       redirect_to public_root_path
     else
       flash[:notice] = "初めからやり直してください。"
-      render action: :index
+      #render tenmlate: 'public/menu/show'
+      # redirect_to public_menu_path(@review.menu.id)
     end
   end
 

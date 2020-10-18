@@ -3,7 +3,7 @@
 		<%= flash[:notice] %>
 	</div>
 
-	<div class="row">
+	<div class="row review-index">
 		<% @reviews.each do |review| %>
 			<div class="review-index col-md-3">
 				<%= link_to public_menu_path(review.menu.id) do %>

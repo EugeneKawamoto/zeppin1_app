@@ -92,6 +92,10 @@ header, nav, h2, h3, h4, body, li,footer {
   color: whitesmoke;
 }
 
+img {
+  margin-bottom: 10px;
+}
+
 a:hover img{
   opacity: 0.6;
   transition-duration: 0.2s;
@@ -99,17 +103,45 @@ a:hover img{
 
 body{
   font-size: 16px;
+  background-color: whitesmoke;
   .menu-index{
     margin-bottom: 10px;
+    background-color: white;
   }
   .review-index{
     margin-bottom: 20px;
   }
   h3 {
-    background-color: whitesmoke;
+    background-color: white;
     text-align: center;
     padding:10px;
     margin-bottom: 20px;
+  }
+  h4 {
+    margin-bottom: 10px;
+    padding: 10px 0 10px 10px;
+    background-color: white;
+  }
+  .review-form {
+    background-color: white;
+    padding: 10px;
+  }
+  .mypage{
+    margin: 20px;
+    background-color: white;
+    padding-top: 10px;
+    .user_introduction{
+      margin: 20px;
+    }
+  }
+  .review-index {
+    background-color: white;
+    padding: 10px;
+  }
+  .review-show ,.bookmark-show {
+    background-color: white;
+    padding-top: 10px;
+    margin: 0 2px 0 2px;
   }
 }
 
@@ -124,12 +156,8 @@ li {
   padding-top: 7px;
 }
 
-.mypage{
-  margin: 20px;
-  .user_introduction{
-    margin: 20px;
-  }
-}
+
+
 
 footer {
   text-align: center;

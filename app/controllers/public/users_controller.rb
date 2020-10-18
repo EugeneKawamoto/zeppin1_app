@@ -5,6 +5,7 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
     @reviews = @user.reviews.order(created_at: :desc).page(params[:page]).reverse_order.per(5)
     @bookmarks = Bookmark.where(user_id: current_user.id).all
+
   end
 
   def edit
