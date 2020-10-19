@@ -25,7 +25,6 @@ class Public::ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
-
   def edit
     @review = Review.find(params[:id])
     @menu = @review.menu
@@ -54,7 +53,7 @@ class Public::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:user_id, :restaurant_id, :menu_id, :comment, :rate, review_images_images: [])
+    params.require(:review).permit(:user_id, :restaurant_id, :menu_id,
+                                   :comment, :rate, review_images_images: [])
   end
-
 end

@@ -1,5 +1,4 @@
 class Restaurant < ApplicationRecord
-
   has_one :review
   has_many :menus
 
@@ -9,5 +8,5 @@ class Restaurant < ApplicationRecord
     else
       Restaurant.all
     end
-end
+  end
 end
