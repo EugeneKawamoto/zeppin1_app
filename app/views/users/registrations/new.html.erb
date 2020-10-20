@@ -1,4 +1,4 @@
-<div class="col-xs-8 col-xs-offset-4">
+<div class="col-xs-8 col-xs-offset-4 user-login">
 
   <h4>新規会員登録</h4>
 
@@ -34,7 +34,7 @@
   <% end %>
 
   <h4>登録済みユーザはこちら</h4>
-  <%= render "users/shared/links"%>
+  <%= link_to "ユーザとしてログインする", new_session_path(resource_name),class: "btn btn-default" %><br />
 
   <h4>簡単ログインはこちら</h4>
   <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "btn btn-info" %>

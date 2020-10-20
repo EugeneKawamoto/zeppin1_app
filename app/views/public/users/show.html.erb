@@ -3,21 +3,23 @@
 
   <div class="row mypage">
     <div class="col-md-2">
-      <%= attachment_image_tag current_user, :profile_image, :fill, 300, 300, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"100x100"%>
+      <%= attachment_image_tag @user, :profile_image, :fill, 300, 300, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"100x100"%>
     </div>
 
     <div class="col-md-offset-1 col-md-4">
-      <strong><%= current_user.name %></strong>
+      <strong><%= @user.name %></strong>
     </div>
 
     <div class="col-md-4">
-        <% if @user.id == current_user.id %>
+        <% if @user.email == "guest@example.com" %>
+          <p>ゲストユーザは編集できません。</p>
+        <% elsif @user.id == current_user.id %>
           <%= link_to "編集する", edit_public_user_path(@user), class:"btn btn-primary" %><br/>
         <% end %>
     </div>
 
     <div class="col-md-8 col-md-offset-4 user_introduction">
-      <%= current_user.introduction %><br/>
+      <%= @user.introduction %><br/>
     </div>
 
   </div>
@@ -28,7 +30,9 @@
       <h3>レビュー一覧</h3>
 
   <%# todo:部分テンプレート %>
-	<% @reviews.each do |review| %>
+  <% if @reviews.present? %>
+
+    <% @reviews.each do |review| %>
     <div class="row review-show">
 
       <div class="col-md-4">
@@ -59,7 +63,13 @@
     </div><br/>
 		<% end %>
     <%= paginate @reviews %>
+  <% else %>
+    <h4>レビューはまだ登録されていません！<br/>
+      あなたの投稿をみんなが待っています！
+    </h4>
+  <% end %>
     </div>
+
 
     <div class="col-md-6">
       <h3><i class="fas fa-bookmark"  style="color: brown;"></i> ブックマーク一覧</h3>

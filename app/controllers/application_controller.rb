@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :check_guest, only: :update
 
   # todo: adominを追加する際に再度場合分けを行う。
   def after_sign_in_path_for(resource)

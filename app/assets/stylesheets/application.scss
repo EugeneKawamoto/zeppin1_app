@@ -53,11 +53,11 @@ header, nav, h2, h3, h4, body, li,footer {
   .logo:visited {
     color: whitesmoke;
   }
-  .navbar-search{
+  .navbar-search {
     padding: 15px 20px;
     font-size: 20px;
   }
-  .nav{
+  .nav {
     padding-right: 10px;
     a {
       size: 16px;
@@ -65,7 +65,7 @@ header, nav, h2, h3, h4, body, li,footer {
       text-decoration: none;
       background-color: brown;
     }
-    a:hover{
+    a:hover {
       background-color: darkred;
     }
     a:visited {
@@ -89,13 +89,13 @@ header, nav, h2, h3, h4, body, li,footer {
 .logo:visited {
   color: whitesmoke;
 }
-.main-visual{
+.main-visual {
   background-image: url(main-image1.jpg);
   width: 100%;
   height: 264px;
   background-size: cover;
   background-position: center;
-  h2{
+  h2 {
     text-align: center;
     padding: .3em;
     line-height: 2.3;
@@ -106,17 +106,23 @@ header, nav, h2, h3, h4, body, li,footer {
 img {
   margin-bottom: 10px;
 }
-a:hover img{
+a:hover img {
   transform: translateY(-10px);
   box-shadow: 0 0 30px rgba(0, 0, 0, .2);
 }
-body{
+
+body {
   font-size: 16px;
   background-color: whitesmoke;
+  .user-login{
+    h4{
+      background-color: whitesmoke;
+    }
+  }
   .pen {
     background: linear-gradient(transparent 70%, rgb(219, 28, 28) 70%);
   }
-  .about-content{
+  .about-content {
     padding-top: 5px;
     text-align: center;
     background-color: whitesmoke;
@@ -127,7 +133,24 @@ body{
       background-color: whitesmoke;
     }
   }
-
+  .feature-image {
+    width: 70%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(map.jpg);
+  }
+  .how-to-image {
+    width: 70%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(photo.jpg);
+  }
+  .about-messages{
+    padding-top: 10px;
+    font-size: 20px;
+  }
   .menu-index{
     margin-bottom: 10px;
     padding-left: 10px;
@@ -138,7 +161,7 @@ body{
     margin-top: 20px;
     background-color: white;
   }
-  h2{
+  h2 {
     color: brown;
     text-align: center;
   }
@@ -157,7 +180,7 @@ body{
     background-color: white;
     padding: 10px 30px 10px 10px;
   }
-  .mypage{
+  .mypage {
     margin: 20px;
     background-color: white;
     padding-top: 10px;
@@ -165,7 +188,7 @@ body{
       margin: 20px;
     }
   }
-  .menu-show{
+  .menu-show {
     background-color: white;
     margin: 0 2px 0 2px;
     padding-top: 10px;
@@ -176,13 +199,13 @@ body{
     padding-top: 10px;
     margin: 0 2px 0 2px;
   }
-  .review-show-id{
+  .review-show-id {
     background-color: white;
     padding-top: 10px;
   }
   .user-edit-form {
     background-color: white;
-    .form-group{
+    .form-group {
       padding: 20px 20px 10px 20px;
     }
   }
