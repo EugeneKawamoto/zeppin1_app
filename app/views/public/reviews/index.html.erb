@@ -1,10 +1,19 @@
-<div class="col-md-8 col-md-offset-2">
 	<div class="flash-message">
 		<%= flash[:notice] %>
 	</div>
 
+	<div class="main-visual">
+		<h2>見つけよう！美味しい一品を！</h2>
+	</div>
+
+<div class="col-md-8 col-md-offset-2">
 	<%# todo:無限リロード javascript導入%>
 	<div class="row review-index">
+		<h4><strong>新着投稿一覧</strong></h4>
+		<h4>おいしい一品を探せるグルメレビューサービス「絶品グルメ」<br/>
+				メニュー単位の投稿が特徴です！お気に入りのメニューが見つかるかもしれません。<br/>
+				レストランの美味しい一品がここにあります！ぜひ見つけてみてください！！
+		</h4>
 		<% @reviews.each do |review| %>
 			<div class="review-index col-md-3">
 				<%= link_to public_menu_path(review.menu.id) do %>

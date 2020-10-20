@@ -10,7 +10,7 @@ class Public::MenusController < ApplicationController
     @restaurant = @menu.restaurant
     @review = Review.new
     @review.review_images.build
-    @reviews = @menu.reviews.order(created_at: :desc).page(params[:page]).per(5)
+    @reviews = @menu.reviews.order(created_at: :desc)
   end
 
   def bookmarks

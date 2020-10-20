@@ -19,7 +19,7 @@
     <h4>メニュー情報</h4>
     <div class="col-md-4">
       <% if @reviews.present? %>
-        <%= attachment_image_tag @reviews.first.review_images.first, :image, size:"200x200" %>
+        <%= attachment_image_tag @reviews.last.review_images.first, :image, size:"200x200" %>
       <% else %>
         <%= image_tag 'no_image1.jpg',size:"145x145"%>
       <% end %>
@@ -86,8 +86,6 @@
       </div>
     </div><br/>
 	<% end %>
-
-    <%= paginate @reviews %>
 
 </div>
 

@@ -13,13 +13,13 @@
 
   <%= form_for(@review, url: {controller: 'reviews', action: 'update' }, html: { class: "form-horizontal" } )do |f| %>
     <div class="form-group">
-      <%= f.label :review_images_images, "画像", class:"col-sm-2" %>
+      <%= f.label :review_images_images, "画像", class:"col-md-offset-1 col-sm-2" %>
       <%= f.attachment_field :review_images_images, multiple: true, class:"col-sm-8" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :comment, "コメント", class:"col-sm-2" %>
-      <%= f.text_field :comment, class:"col-sm-8" %>
+      <%= f.label :comment, "コメント", class:"col-md-offset-1 col-sm-2" %>
+      <%= f.text_area :comment, class:"col-sm-8" %>
     </div>
 
       <%= f.hidden_field :restaurant_id, :value => @menu.restaurant.id %>
@@ -27,7 +27,7 @@
 
     <div class="form-group">
       <div id="star">
-        <%= f.label :rate,'評価', class:"col-sm-2" %>
+        <%= f.label :rate,'評価', class:"col-md-offset-1 col-sm-2" %>
           <%= f.hidden_field :rate, id: :review_star, class:"col-sm-8" %>
           <span id="score_number"></span> 点 |
       </div>

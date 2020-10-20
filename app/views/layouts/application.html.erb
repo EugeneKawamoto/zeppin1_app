@@ -13,63 +13,51 @@
 
   <body>
     <div id="wrapper">
-
       <nav class="navbar navbar-static-top">
-        <div class="container">
-          <% if user_signed_in? %>
-            <header>
-              <div class="header-content">
-                <%= link_to ' 絶品グルメ', public_root_path, class: "fas fa-utensils logo" %>
-
-                <div class="navbar-search">
-                  <%= form_tag(public_search_path, method: :get) do %>
-                    <%= select_tag(:option, options_for_select([["レストラン", "1"],["メニュー","2"]]))%>
-                    <%= text_field_tag :search, '', placeholder: "ロクサン ピザ"%> <%# ''空欄を入れることでplaceholderを表示 %>
-                    <%= submit_tag '検索', class: "btn btn-default" %>
-                  <% end %>
-                </div>
-
-                <ul class="nav navbar-nav">
-                  <li><%= link_to 'お店を探す', public_restaurants_path %></li>
-                  <li><%= link_to 'マイページ', public_users_my_page_path(current_user.id) %></li>
-                  <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-                </ul>
+        <% if user_signed_in? %>
+          <header>
+            <div class="header-content">
+              <%= link_to ' 絶品グルメ', public_root_path, class: "fas fa-utensils logo" %>
+              <div class="navbar-search">
+                <%= form_tag(public_search_path, method: :get) do %>
+                  <%= select_tag(:option, options_for_select([["レストラン", "1"],["メニュー","2"]]))%>
+                  <%= text_field_tag :search, '', placeholder: "ロクサン ピザ"%> <%# ''空欄を入れることでplaceholderを表示 %>
+                  <%= submit_tag '検索', class: "btn btn-default" %>
+                <% end %>
               </div>
-            </header>
-
+              <ul class="nav navbar-nav">
+                <li><%= link_to 'お店を探す', public_restaurants_path %></li>
+                <li><%= link_to 'マイページ', public_users_my_page_path(current_user.id) %></li>
+                <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </div>
+          </header>
           <% else %>
-
-            <header>
-              <div class="header-content">
-                <%= link_to ' 絶品グルメ', public_root_path, class: "fas fa-utensils logo" %>
-                <div class="navbar-search">
-                  <%= form_tag(public_search_path, method: :get) do %>
-                    <%= select_tag(:option, options_for_select([["レストラン", "1"],["メニュー","2"]]))%>
-                    <%= text_field_tag :search, '', placeholder: "ロクサン ピザ"%> <%# ''空欄を入れることでplaceholderを表示 %>
-                    <%= submit_tag '検索', class: "btn btn-default" %>
-                  <% end %>
-                </div>
-
-                <ul class="nav navbar-nav">
-                  <li><%= link_to 'About', public_homes_about_path %></li>
-                  <li><%= link_to '新規登録', new_user_registration_path %></li>
-                  <li><%= link_to 'ログイン', new_user_session_path %></li>
-                </ul>
+          <header>
+            <div class="header-content">
+              <%= link_to ' 絶品グルメ', public_root_path, class: "fas fa-utensils logo" %>
+              <div class="navbar-search">
+                <%= form_tag(public_search_path, method: :get) do %>
+                  <%= select_tag(:option, options_for_select([["レストラン", "1"],["メニュー","2"]]))%>
+                  <%= text_field_tag :search, '', placeholder: "ロクサン ピザ"%> <%# ''空欄を入れることでplaceholderを表示 %>
+                  <%= submit_tag '検索', class: "btn btn-default" %>
+                <% end %>
               </div>
-            </header>
-          <% end %>
-        </div>
+              <ul class="nav navbar-nav">
+                <li><%= link_to 'About', public_homes_about_path %></li>
+                <li><%= link_to '新規登録', new_user_registration_path %></li>
+                <li><%= link_to 'ログイン', new_user_session_path %></li>
+              </ul>
+            </div>
+          </header>
+        <% end %>
       </nav>
 
       <div class="container">
         <%= yield %>
       </div>
 
-      <div class="container">
-        <footer>Copyright © Zeppin Gourumet All Rights Reserved.</footer>
-      </div>
+      <footer>Copyright © Zeppin Gourumet All Rights Reserved.</footer>
     </div>
   </body>
-
-
 </html>

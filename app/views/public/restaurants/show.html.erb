@@ -1,6 +1,6 @@
 <div class="col-md-8 col-md-offset-2">
 
-	<h3><%= @restaurant.name %>の情報</h3>
+	<h3><i class="fas fa-store-alt" style="color: gray;"></i> <%= @restaurant.name %>の情報</h3>
 	<div class="row restaurant-info">
 		<div class="col-md-7">
       <div id="map"></div>
@@ -12,7 +12,7 @@
 	</div>
 
 	<%# todo:レビューランキング表示 %>
-	<h3> メニュー一覧 <small>(<%= @menus.count %>)</small></h3>
+	<h3><i class="fas fa-book-open" style="color: gray;"></i> メニュー一覧 <small>(<%= @menus.count %>)</small></h3>
 		<% @menus.each do |menu| %>
 		<table>
 			<li><%= link_to menu.name, public_menu_path(menu.id) %></li>
