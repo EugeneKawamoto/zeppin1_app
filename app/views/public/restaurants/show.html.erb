@@ -1,18 +1,18 @@
 <div class="col-md-8 col-md-offset-2">
 
 	<h3><%= @restaurant.name %>の情報</h3>
-	<div class= row>
-		<div class="col-md-8">
+	<div class="row restaurant-info">
+		<div class="col-md-7">
       <div id="map"></div>
 		</div>
 		<div class="col-md-4">
-			<%= @restaurant.address %>
-			<%= @restaurant.phone %>
+			<div class="restaurant-address"><i class="fas fa-map-marked-alt" style="color: gray;"></i><%= @restaurant.address %></div><br/>
+			<div class="restaurant-name"><i class="fas fa-phone-alt" style="color: gray;"></i><%= @restaurant.phone %></div>
 		</div>
 	</div>
 
+	<%# todo:レビューランキング表示 %>
 	<h3> メニュー一覧 <small>(<%= @menus.count %>)</small></h3>
-
 		<% @menus.each do |menu| %>
 		<table>
 			<li><%= link_to menu.name, public_menu_path(menu.id) %></li>
@@ -22,7 +22,7 @@
 </div>
 
 <script>
-	var MyLatLng = new google.maps.LatLng(35.6655203, 139.6956679);
+	var MyLatLng = new google.maps.LatLng(35.6598506, 139.6975521);
 	var Options = {
 		zoom     : 16,
 		center   : MyLatLng,

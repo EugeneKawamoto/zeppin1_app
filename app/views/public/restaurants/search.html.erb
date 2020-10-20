@@ -1,9 +1,9 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-5 col-md-offset-3">
 
   <% if @restaurant_or_menu == "1"%>
 
-    <h4>レストラン</h4>
-    <%# todo: if文の簡略化 %>
+    <h3>レストランの検索結果</h3>
+    <%# todo: if文の簡略化,メニューと店舗登録の催促メッセージの追加 %>
     <% if @restaurants.present? %>
       <%= render 'public/restaurants/index', restaurants: @restaurants %>
       <%= paginate @restaurants %>
@@ -12,7 +12,7 @@
     <% end %>
   <% elsif @restaurant_or_menu == "2" %>
 
-    <h4>メニュー</h4>
+    <h3>メニューの検索結果</h3>
     <% if @menus.present? %>
       <%= render 'public/menus/index', menus: @menus %>
       <%= paginate @menus%>

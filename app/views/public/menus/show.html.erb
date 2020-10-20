@@ -15,21 +15,20 @@
 
   <h3><%= @menu.name %>（<%= @restaurant.name %>）の評判</h3>
 
-  <h4>メニュー情報</h4>
   <div class="row menu-show">
-    <div class="col-md-3">
+    <h4>メニュー情報</h4>
+    <div class="col-md-4">
       <% if @reviews.present? %>
-        <%= attachment_image_tag @reviews.first.review_images.first, :image, size:"145x145" %>
+        <%= attachment_image_tag @reviews.first.review_images.first, :image, size:"200x200" %>
       <% else %>
         <%= image_tag 'no_image1.jpg',size:"145x145"%>
       <% end %>
     </div>
 
-    <div class="col-md-8">
-      <div class="menu-name"><%= @menu.name %></div>
-      <div class="menu-price"><%= @menu.price %>円</div>
-      <div class="restaurant-name"><%= @menu.restaurant.name %></div>
-      <div id="star-rate-<%= @menu.id %>"><%= @menu.reviews.average(:rate).to_f.round(1) %>点｜</div>
+    <div class="col-md-6">
+      <div id="star-rate-<%= @menu.id %>"><%= @menu.reviews.average(:rate).to_f.round(1) %>点｜</div><br/>
+      <div class="menu-price">値段 <%= @menu.price %>円</div><br/>
+      <div class="restaurant-name"><i class="fas fa-store-alt"></i><%= @menu.restaurant.name %></div><br/>
 
       <div class="bookmark">
         <% if @menu.bookmarked_by?(current_user) %>
@@ -39,7 +38,7 @@
           <% end %>
         <% else %>
           <%= link_to public_menu_bookmarks_path(@menu), method: :POST do %>
-            <i class="fas fa-bookmark" aria-hidden="true" style="color: gray;"></i>
+            <i class="far fa-bookmark" aria-hidden="true" style="color: gray;"></i>
             <%= @menu.bookmarks.count %>
           <% end %>
         <% end %>

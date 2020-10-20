@@ -35,6 +35,8 @@ class Public::ReviewsController < ApplicationController
 
   def update
     @review = Review.find(params[:id])
+    @menu = Menu.find(params[:review][:menu_id])
+    @restaurant = @menu.restaurant
     if @review.update(review_params)
       flash[:notice] = "レビューの更新に成功しました。"
       redirect_to public_review_path(@review.id)

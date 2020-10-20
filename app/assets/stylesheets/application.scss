@@ -23,7 +23,6 @@
   box-sizing: border-box;
 }
 
-// footer 固定
 body, #wrapper {
   display: flex;
   flex-direction: column;
@@ -106,10 +105,13 @@ body{
   background-color: whitesmoke;
   .menu-index{
     margin-bottom: 10px;
+    padding-left: 10px;
     background-color: white;
   }
   .review-index{
     margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: white;
   }
   h3 {
     background-color: white;
@@ -119,12 +121,12 @@ body{
   }
   h4 {
     margin-bottom: 10px;
-    padding: 10px 0 10px 10px;
+    padding: 10px;
     background-color: white;
   }
   .review-form {
     background-color: white;
-    padding: 10px;
+    padding: 10px 30px 10px 10px;
   }
   .mypage{
     margin: 20px;
@@ -134,18 +136,31 @@ body{
       margin: 20px;
     }
   }
-  .review-index {
+  .menu-show{
     background-color: white;
-    padding: 10px;
+    margin: 0 2px 0 2px;
+    padding-top: 10px;
+    font-size: 18px;
   }
   .review-show ,.bookmark-show {
     background-color: white;
     padding-top: 10px;
     margin: 0 2px 0 2px;
   }
+  .user-edit-form {
+    background-color: white;
+    .form-group{
+      padding: 20px 20px 10px 20px;
+    }
+  }
+  .restaurant-info{
+    background-color: white;
+    margin: 0 2px 0 2px;
+    padding: 10px 0;
+  }
   #map {
     height: 200px;
-    width: 360px;
+    width: 400px;
   }
 }
 
@@ -155,6 +170,10 @@ a {
   color: brown;
   text-decoration: none;
   background-color: transparent;
+}
+
+i {
+  margin-right: 10px;
 }
 
 li {

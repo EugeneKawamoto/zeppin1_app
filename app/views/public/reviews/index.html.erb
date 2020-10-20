@@ -3,6 +3,7 @@
 		<%= flash[:notice] %>
 	</div>
 
+	<%# todo:無限リロード javascript導入%>
 	<div class="row review-index">
 		<% @reviews.each do |review| %>
 			<div class="review-index col-md-3">
@@ -25,8 +26,10 @@
           });
           </script>
 
-				<%= truncate review.comment %>
+				<%= review.comment.truncate(30) %>
 			</div>
 		<% end %>
 	</div>
+    <%= paginate @reviews %>
+
 </div>

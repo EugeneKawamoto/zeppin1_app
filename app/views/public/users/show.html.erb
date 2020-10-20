@@ -6,7 +6,7 @@
       <%= attachment_image_tag current_user, :profile_image, :fill, 300, 300, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"100x100"%>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-offset-1 col-md-4">
       <strong><%= current_user.name %></strong>
     </div>
 
@@ -62,7 +62,7 @@
     </div>
 
     <div class="col-md-6">
-      <h3><i class="fas fa-bookmark"></i> ブックマーク一覧</h3>
+      <h3><i class="fas fa-bookmark"  style="color: brown;"></i> ブックマーク一覧</h3>
       <% if @bookmarks.present? %>
         <% @bookmarks.each do |bookmark| %>
           <div class="row bookmark-show">
@@ -74,11 +74,12 @@
             </div>
 
             <div class="col-md-8">
-              <%= bookmark.menu.name %>
-              <div class="restaurant-name"><%= bookmark.menu.restaurant.name %></div>
-              <div id="star-rate-<%= bookmark.menu.id %>"><%= bookmark.menu.reviews.average(:rate).to_f.round(1) %>点｜</div>
+              <div id="star-rate-<%= bookmark.menu.id %>"><%= bookmark.menu.reviews.average(:rate).to_f.round(1) %>点｜</div><br/>
+              <div class="restaurant-name"><i class="fas fa-store-alt"></i><%= bookmark.menu.restaurant.name %></div><br/>
+              <div class="memnu-name"><i class="far fa-file"></i><%= bookmark.menu.name %></div><br/>
 
             </div>
+            <%# each文のため、文中に記載 %>
             <script>
               $('#star-rate-<%= bookmark.menu.id %>').raty({
                 starOff   : '<%= asset_path('star-off.png') %>',
