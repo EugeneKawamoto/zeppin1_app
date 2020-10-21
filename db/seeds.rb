@@ -12,17 +12,17 @@
 User.create!([
   {
   name: 'グルメ太郎',
-  email: 'taro@mail',
+  email: 'taro@email.com',
   introduction: '私の好きな食べ物は、ロクサンのエビダブルガーリックピザです！',
   password: 123123
   },{
   name: 'グルメ二郎',
-  email: 'jiro@mail',
+  email: 'jiro@email.com',
   introduction: '私の好きな食べ物は、ロクサンのエビダブルガーリックピザです！',
   password: 123123
   }, {
     name: '三郎グルメ',
-    email: 'saburo@mail',
+    email: 'saburo@email.com',
     introduction: '私の好きな食べ物は、ロクサンのエビダブルガーリックピザです！',
     password: 123123
   }

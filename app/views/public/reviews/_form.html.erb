@@ -1,6 +1,6 @@
   <h4>レビューの新規投稿</h4>
 
-  <%= form_for(review, url: public_reviews_path, html: { class: "form-horizontal" } )do |f| %>
+  <%= form_for(review, url: public_reviews_path, html: { class: "form-horizontal" })do |f| %>
     <div class="form-group">
       <%= f.label :review_images_images, "画像", class:"col-md-offset-1 col-sm-2" %>
       <%= f.attachment_field :review_images_images, multiple: true, class:"col-sm-6" %>

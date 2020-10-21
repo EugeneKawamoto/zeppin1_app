@@ -54,8 +54,9 @@ header, nav, h2, h3, h4, body, li,footer {
     color: whitesmoke;
   }
   .navbar-search {
-    padding: 15px 20px;
-    font-size: 20px;
+    padding: 15px 15px;
+    font-size: 21px;
+    text-align: center;
   }
   .nav {
     padding-right: 10px;
@@ -72,23 +73,23 @@ header, nav, h2, h3, h4, body, li,footer {
       color: whitesmoke;
     }
   }
+  .logo {
+    padding: 10px 20px;
+    margin: 5px 0 0 10px ;
+    height: 50px;
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    background-color: brown;
+  }
+  .logo:hover {
+    background-color: darkred;
+  }
+  .logo:visited {
+    color: whitesmoke;
+  }
 }
 
-.logo {
-  padding: 10px 20px;
-  margin: 5px 0 0 10px ;
-  height: 50px;
-  font-size: 30px;
-  text-decoration: none;
-  color: white;
-  background-color: brown;
-}
-.logo:hover {
-  background-color: darkred;
-}
-.logo:visited {
-  color: whitesmoke;
-}
 .main-visual {
   background-image: url(main-image1.jpg);
   width: 100%;
@@ -105,6 +106,11 @@ header, nav, h2, h3, h4, body, li,footer {
 }
 img {
   margin-bottom: 10px;
+}
+a:hover img.profile{
+  color: rgba(0, 0, 0, 0.5);
+  transform: none;
+  box-shadow: none;
 }
 a:hover img {
   transform: translateY(-10px);
@@ -133,18 +139,25 @@ body {
       background-color: whitesmoke;
     }
   }
+  .review-intro{
+    margin-left: 10px;
+  }
   .feature-image {
     width: 70%;
     height: 250px;
+    margin-bottom: 10px;
     background-size: cover;
     background-position: center;
+    box-shadow: 15px 15px 0px 0 rgb(50, 52, 53);
     background-image: url(map.jpg);
   }
   .how-to-image {
     width: 70%;
     height: 250px;
+    margin-bottom: 10px;
     background-size: cover;
     background-position: center;
+    box-shadow: 15px 15px 0px 0 rgb(50, 52, 53);
     background-image: url(photo.jpg);
   }
   .about-messages{
@@ -218,12 +231,17 @@ body {
     height: 200px;
     width: 400px;
   }
+  a.user-name{
+    color: black;
+    text-decoration: none;
+  }
+  a {
+    color: brown;
+    text-decoration: none;
+    background-color: transparent;
+  }
 }
-a {
-  color: brown;
-  text-decoration: none;
-  background-color: transparent;
-}
+
 i {
   margin-right: 10px;
 }

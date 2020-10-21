@@ -4,12 +4,14 @@ class Public::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @reviews = @user.reviews.order(created_at: :desc).page(params[:page]).reverse_order.per(5)
-    @bookmarks = Bookmark.where(user_id: current_user.id).all
+    @bookmarks = Bookmark.where(user_id: @user.id).all
   end
 
   def edit
     @user = User.find(params[:id])
-    unless current_user.id == @user.id
+    if @user.email == "guest@example.com"
+      redirect_to root_path
+    elsif current_user.id =! @user.id
       redirect_to public_user_path(current_user.id)
     end
   end

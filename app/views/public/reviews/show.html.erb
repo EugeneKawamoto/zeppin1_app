@@ -1,14 +1,15 @@
   <%# todo:部分テンプレート menu show %>
-<div class="col-md-8 col-md-offset-2 review-show-id">
-  <div class="flash-message">
+    <div class="flash-message">
 		<%= flash[:notice] %>
   </div>
 
+<div class="col-md-8 col-md-offset-2 review-show-id">
+  <div class="row">
     <div class="col-md-3">
       <%= attachment_image_tag @review.review_images.first, :image ,size:"145x145" %>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-9">
       <%= attachment_image_tag @review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"50x50" %>
       <strong><%= @review.user.name %></strong> |
 
@@ -27,8 +28,8 @@
 
       <div class="review-comment"><%= @review.comment %></div><br/>
     </div>
-
-    <div class="col-md-6 col-md-offset-1">
+  </div>
+    <div class="col-md-6 col-md-offset-4">
       <% if @review.user.id == current_user.id %>
         <%= link_to "レビューを編集する", edit_public_review_path(@review), class:"btn btn-success" %>
         <%= link_to "レビューを削除する", "#{@review.id}", method: :delete, "data-confirm" => "本当に消しますか?", class:"btn btn-danger pull-right" %></td>

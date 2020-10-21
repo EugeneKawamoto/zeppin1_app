@@ -3,7 +3,7 @@
 
   <div class="row mypage">
     <div class="col-md-2">
-      <%= attachment_image_tag @user, :profile_image, :fill, 300, 300, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"100x100"%>
+      <%= attachment_image_tag @user, :profile_image, :fill, 300, 300, fallback: "no_image1.jpg", class:"img-circle profile", size:"100x100"%>
     </div>
 
     <div class="col-md-offset-1 col-md-4">
@@ -45,7 +45,7 @@
         <%= attachment_image_tag review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"50x50" %>
         <strong><%= review.user.name %></strong> |
 
-        <%# 個別星評価 JabaScript %>
+        <%# each文の中のためこの位置に記載 %>
         <span id="star-rate-menu<%= review.id %>"><%= review.rate %>点｜</span>
           <script>
           $('#star-rate-menu<%= review.id %>').raty({

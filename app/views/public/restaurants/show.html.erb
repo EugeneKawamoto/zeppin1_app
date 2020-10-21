@@ -11,7 +11,7 @@
 		</div>
 	</div>
 
-	<%# todo:レビューランキング表示 %>
+	<%# todo:レビューランキング表示にする %>
 	<h3><i class="fas fa-book-open" style="color: gray;"></i> メニュー一覧 <small>(<%= @menus.count %>)</small></h3>
 		<% @menus.each do |menu| %>
 		<table>
@@ -21,8 +21,9 @@
 
 </div>
 
+	<%# todo:絶対値表示ではなく、レストランの場所ごとに表示 %>
 <script>
-	var MyLatLng = new google.maps.LatLng(35.6598506, 139.6975521);
+	var MyLatLng = new google.maps.LatLng(35.645249, 139.6713379);
 	var Options = {
 		zoom     : 16,
 		center   : MyLatLng,
