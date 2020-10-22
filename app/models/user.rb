@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   attachment :profile_image
   validates :introduction, length: { maximum: 250 }, allow_blank: true
-  validates :name, presence: true, length: { in: 2..20 }
+  validates :name, presence: true, length: { in: 2..17 }
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|

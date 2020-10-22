@@ -6,6 +6,7 @@ class Public::RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @menus = @restaurant.menus
+
   end
 
   def search

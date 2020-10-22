@@ -7,7 +7,7 @@
       <div id="error_explanation" class="alert alert-danger">
         <ul>
           <% @review.errors.full_messages.each do |message| %>
-            <li><%= message +"error" %></li>
+            <li><%= message %></li>
           <% end %>
         </ul>
       </div>
@@ -69,7 +69,7 @@
 				<%= link_to public_users_my_page_path(review.user.id) do %>
           <%= attachment_image_tag review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile", size:"50x50" %>
         <% end %>
-        <strong><%= link_to review.user.name,public_users_my_page_path(review.user.id), class:"user-name" %></strong> |
+        <%= link_to review.user.name.truncate(14), public_users_my_page_path(review.user.id), class:"user-name" %> |
 
         <%# 個別星評価のためこの位置に記載 %>
         <span id="star-rate-<%= review.id %>"><%= review.rate %>点｜</span>
@@ -80,7 +80,7 @@
             starHalf  : '<%= asset_path('star-half.png') %>',
             half      : true,
             readOnly  : true,
-            score     : <%= review.rate %>,
+            score     : <%= review.rate %>
           });
           </script>
 

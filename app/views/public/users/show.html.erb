@@ -7,7 +7,7 @@
     </div>
 
     <div class="col-md-offset-1 col-md-4">
-      <strong><%= @user.name %></strong>
+      <%= @user.name %>
     </div>
 
     <div class="col-md-4">
@@ -43,7 +43,7 @@
 
       <div class="col-md-8">
         <%= attachment_image_tag review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"50x50" %>
-        <strong><%= review.user.name %></strong> |
+        <%= review.user.name %> |
 
         <%# each文の中のためこの位置に記載 %>
         <span id="star-rate-menu<%= review.id %>"><%= review.rate %>点｜</span>
@@ -102,6 +102,7 @@
               </script>
           </div><br/>
         <% end  %>
+      <%= paginate @bookmarks %>
       <% else %>
         <h4>ブックマークはまだ登録されていません！<br/>
             「検索」からお気に入りのメニューを探してみてください！

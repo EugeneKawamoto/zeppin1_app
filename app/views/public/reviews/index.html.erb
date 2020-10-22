@@ -23,7 +23,7 @@
 				<%= link_to public_users_my_page_path(review.user.id) do %>
 					<%= attachment_image_tag review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile", size:"40x40" %>
 				<% end %>
-				<%= link_to review.user.name, public_users_my_page_path(review.user.id) ,class:"user-name" %>
+				<%= link_to review.menu.name.truncate(8), public_menu_path(review.menu.id) ,class:"menu-name" %>
 
         <div id="star-rate-<%= review.id %>"><%= review.rate %>点｜</div>
 

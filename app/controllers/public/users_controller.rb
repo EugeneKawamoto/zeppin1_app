@@ -3,8 +3,8 @@ class Public::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @reviews = @user.reviews.order(created_at: :desc).page(params[:page]).reverse_order.per(5)
-    @bookmarks = Bookmark.where(user_id: @user.id).all
+    @reviews = @user.reviews.page(params[:page]).reverse_order.per(5)
+    @bookmarks = Bookmark.where(user_id: @user.id).all.page(params[:page]).reverse_order.per(5)
   end
 
   def edit

@@ -55,11 +55,19 @@ header, nav, h2, h3, h4, body, li,footer {
   }
   .navbar-search {
     padding: 15px 15px;
+    margin-left: 70px;
     font-size: 21px;
-    text-align: center;
+  }
+  .header-profile {
+    transform: none;
+    box-shadow: none;
+    margin-top: 10px;
   }
   .nav {
-    padding-right: 10px;
+    padding-right: 20px;
+    li {
+    margin-right: 5px;
+    }
     a {
       size: 16px;
       color: white;
@@ -68,9 +76,6 @@ header, nav, h2, h3, h4, body, li,footer {
     }
     a:hover {
       background-color: darkred;
-    }
-    a:visited {
-      color: whitesmoke;
     }
   }
   .logo {
@@ -104,9 +109,7 @@ header, nav, h2, h3, h4, body, li,footer {
     background-color: rgba(0, 0, 0, 0.6);
   }
 }
-img {
-  margin-bottom: 10px;
-}
+
 a:hover img.profile{
   color: rgba(0, 0, 0, 0.5);
   transform: none;
@@ -174,6 +177,15 @@ body {
     margin-top: 20px;
     background-color: white;
   }
+  .menu-rank{
+    background-color: white;
+    margin: 0 2px 0 2px;
+    padding-top: 10px;
+    font-size: 18px;
+    p {
+      font-size: 20px;
+    }
+  }
   h2 {
     color: brown;
     text-align: center;
@@ -188,6 +200,9 @@ body {
     margin-bottom: 10px;
     padding: 10px;
     background-color: white;
+  }
+  img {
+    margin-bottom: 10px;
   }
   .review-form {
     background-color: white;
@@ -231,7 +246,13 @@ body {
     height: 200px;
     width: 400px;
   }
-  a.user-name{
+  a.user-name {
+    color: black;
+    text-decoration: none;
+  }
+  a.menu-name {
+    margin-left: 3px;
+    font-size: 14px;
     color: black;
     text-decoration: none;
   }

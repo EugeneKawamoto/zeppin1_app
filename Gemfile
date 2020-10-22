@@ -66,18 +66,15 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
-
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
-
 gem 'kaminari', '~> 1.2.1'
-
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
-
 gem 'dotenv-rails'
-
 gem 'pry-rails'
+gem 'rails-i18n'
+gem 'kaminari-i18n'
 
 group :production do
   gem 'mysql2'
