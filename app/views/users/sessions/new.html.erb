@@ -5,12 +5,12 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal" }) do |f| %>
     <div class="form-group">
       <%= f.label :メールアドレス, class:"col-sm-3" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "taro@email.com" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
     <div class="form-group">
       <%= f.label :パスワード , class:"col-sm-3"%>
-      <%= f.password_field :password, autocomplete: "current-password", placeholder: "123123" %>
+      <%= f.password_field :password, autocomplete: "current-password" %>
     </div>
 
     <% if devise_mapping.rememberable? %>

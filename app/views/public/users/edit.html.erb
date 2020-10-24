@@ -14,15 +14,15 @@
       <%= form_for(@user, url:public_user_path, html: { class: "form-horizontal" }) do |f| %>
         <div class="form-group">
           <%= f.label :画像 %><br />
-          <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+          <%= f.attachment_field :profile_image, class: "user-edit-form" %>
         </div>
         <div class="form-group">
           <%= f.label :名前 %><br />
           <%= f.text_field :name, class:"form-control col-md-5" %>
         </div>
         <div class="form-group">
-          <%= f.label :自己紹介 %><br />
-          <%= f.text_area :introduction, class:"form-control", placeholder:"私の好きな食べ物はマルゲリータピザです"%>
+          <%= f.label :自己紹介 %><small>｜好きな食べ物は〇〇です！</small><br />
+          <%= f.text_area :introduction, class:"form-control"%>
         </div>
         <div class="form-group">
           <%= f.submit "変更を保存する", class:"btn btn-primary" %>

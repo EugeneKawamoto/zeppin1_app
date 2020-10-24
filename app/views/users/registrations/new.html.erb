@@ -7,22 +7,22 @@
 
       <div class="form-group">
         <%= f.label :名前, class:"col-sm-3" %>
-        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "グルメ太郎", class:"col-sm-offset-1 col-sm-4" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"col-sm-offset-1 col-sm-4" %>
       </div>
 
       <div class="form-group">
         <%= f.label :メールアドレス, class:"col-sm-3" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "taro@email.com", class:"col-sm-offset-1 col-sm-4" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"col-sm-offset-1 col-sm-4" %>
       </div>
 
       <div class="form-group">
         <%= f.label :パスワード（6文字以上）, class:"col-sm-4" %>
-        <%= f.password_field :password, autocomplete: "new-password", placeholder: "123123", class:"col-sm-4" %>
+        <%= f.password_field :password, autocomplete: "new-password", class:"col-sm-4" %>
       </div>
 
       <div class="form-group">
         <%= f.label :パスワード（確認用）, class:"col-sm-4" %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "123123", class:"col-sm-4" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"col-sm-4" %>
       </div>
       <br />
       <div class="actions">
