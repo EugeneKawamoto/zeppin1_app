@@ -45,8 +45,7 @@ https://docs.google.com/spreadsheets/d/10pVjLpwzXf_CYbOYnmY3KiBRRaQ29r_XGBwHcIVs
 - ページネーション機能(kaminari)
 - 検索機能
 - Google Map 表示機能(GoogoleMapAPI)  
-　
-▼ 機能詳細リンク
+機能詳細リンク
 https://docs.google.com/spreadsheets/d/10pVjLpwzXf_CYbOYnmY3KiBRRaQ29r_XGBwHcIVs9jk/edit#gid=0
 
 ## 開発環境
