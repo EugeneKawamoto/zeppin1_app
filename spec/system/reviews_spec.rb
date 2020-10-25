@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'レビュー投稿のテスト' do
-
   before do
     visit new_user_session_path
     fill_in 'user[name]', with: user.name
@@ -14,6 +13,7 @@ describe 'レビュー投稿のテスト' do
       before do
         visit public_menu_path(menu.id)
       end
+
       it '投稿に成功する' do
         expect(response.status).to eq 200
         # fill_in 'review[review_image]'
@@ -29,4 +29,3 @@ describe 'レビュー投稿のテスト' do
     end
   end
 end
-
