@@ -29,7 +29,7 @@ body, #wrapper {
   min-height: 100vh;
 }
 
-header, nav, h2, h3, h4, body, li,footer {
+header, nav, h2, h3, h4, p, body, li,footer {
   font-family: 'Noto Sas JP', sans-serif;
 }
 
@@ -47,16 +47,14 @@ header, nav, h2, h3, h4, body, li,footer {
     text-decoration: none;
     color: white;
   }
-  .logo:hover {
-    background-color: darkred;
-  }
-  .logo:visited {
-    color: whitesmoke;
-  }
   .navbar-search {
     padding: 15px 15px;
     margin-left: 70px;
     font-size: 21px;
+  }
+  .btn-search {
+    background-color: white;
+    margin: 0;
   }
   .header-profile {
     transform: none;
@@ -90,11 +88,7 @@ header, nav, h2, h3, h4, body, li,footer {
   .logo:hover {
     background-color: darkred;
   }
-  .logo:visited {
-    color: whitesmoke;
-  }
 }
-
 .main-visual {
   background-image: image-url("main-image1.jpg");
   width: 100%;
@@ -109,15 +103,16 @@ header, nav, h2, h3, h4, body, li,footer {
     background-color: rgba(0, 0, 0, 0.6);
   }
 }
-
-a:hover img.profile{
-  color: rgba(0, 0, 0, 0.5);
-  transform: none;
-  box-shadow: none;
-}
-a:hover img {
-  transform: translateY(-10px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+a:hover {
+  text-decoration: none;
+  img.profile{
+    transform: none;
+    box-shadow: none;
+  }
+  a:hover img {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+  }
 }
 
 body {
@@ -143,7 +138,10 @@ body {
     }
   }
   .review-intro{
-    margin-left: 10px;
+    margin:0 0 10px 10px;
+    p {
+      margin: 0;
+    }
   }
   .feature-image {
     width: 70%;
@@ -229,7 +227,7 @@ body {
   }
   .review-show-id {
     background-color: white;
-    padding-top: 10px;
+    padding: 10px;
   }
   .user-edit-form {
     background-color: white;
@@ -261,11 +259,12 @@ body {
     text-decoration: none;
     background-color: transparent;
   }
+  i {
+    margin: 0 10px 0 5px;
+  }
 }
 
-i {
-  margin-right: 10px;
-}
+
 li {
   list-style: none;
   padding-top: 7px;

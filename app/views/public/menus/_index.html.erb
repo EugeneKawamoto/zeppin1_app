@@ -1,8 +1,8 @@
 <% menus.each do |menu| %>
 	<div class="row menu-index">
-		<span class="col-md-4"><i class="fas fa-book-open"></i>メニュー名</span><%= link_to menu.name, public_menu_path(menu.id), class:"col-md-8" %>
-		<span class="col-md-4"><i class="fas fa-coins"></i> 値段</span><span class="col-md-8"><%= menu.price %>円</span>
-		<span class="col-md-4"><i class="fas fa-store-alt"></i>店舗名</span><span class="col-md-8"><%= menu.restaurant.name %></span>
+		<span class="col-md-4"><i class="fas fa-book-open fa-fw"></i>メニュー名</span><%= link_to menu.name, public_menu_path(menu.id), class:"col-md-8" %>
+		<span class="col-md-4"><i class="fas fa-coins fa-fw"></i> 値段</span><span class="col-md-8"><%= menu.price %>円</span>
+		<span class="col-md-4"><i class="fas fa-store-alt fa-fw"></i>店舗名</span><span class="col-md-8"><%= menu.restaurant.name %></span>
 		<br />
 	</div>
 <% end %>

@@ -22,7 +22,7 @@
                 <%= form_tag(public_search_path, method: :get) do %>
                   <%= select_tag(:option, options_for_select([["レストラン", "1"],["メニュー","2"]]))%>
                   <%= text_field_tag :search, '', placeholder: "ピザ屋 マルゲリータ"%> <%# ''空欄を入れることでplaceholderを表示 %>
-                  <%= submit_tag '検索', class: "btn btn-default" %>
+                  <button type="submit" class="btn-search"><i class="fas fa-search fa-fw"></i></button>
                 <% end %>
               </div>
               <ul class="nav navbar-nav">

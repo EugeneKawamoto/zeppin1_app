@@ -1,7 +1,9 @@
 <% restaurants.each do |restaurant| %>
 	<div class="row restaurant-infomation">
 		<h4><%= link_to restaurant.name, public_restaurant_path(restaurant.id) %></h4>
-		<span class="col-md-3"><i class="fas fa-map-marked-alt" style="color: gray;"></i>場所</span><span class="col-md-9"><%= restaurant.address %></span>
-		<span class="col-md-3"><i class="fas fa-phone-alt" style="color: gray;"></i>電話</span><span class="col-md-9"><%= restaurant.phone %></span><br/>
+		<span class="col-md-3"><i class="fas fa-map-marked-alt fa-fw" style="color: gray;"></i>場所</span>
+		<span class="col-md-9"><%= restaurant.address %></span><br/>
+		<span class="col-md-3"><i class="fas fa-phone-alt fa-fw" style="color: gray;"></i>電話</span>
+		<span class="col-md-9"><%= restaurant.phone %></span><br/>
 	</div>
 <% end %>

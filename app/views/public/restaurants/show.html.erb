@@ -1,18 +1,18 @@
 <div class="col-md-8 col-md-offset-2">
 
-	<h3><i class="fas fa-store-alt" style="color: gray;"></i> <%= @restaurant.name %>の情報</h3>
+	<h3><i class="fas fa-store-alt fa-fw" style="color: gray;"></i> <%= @restaurant.name %>の情報</h3>
 	<div class="row restaurant-info">
 		<div class="col-md-7">
       <div id="map"></div>
 		</div>
-		<div class="col-md-4">
-			<div class="restaurant-address"><i class="fas fa-map-marked-alt" style="color: gray;"></i><%= @restaurant.address %></div><br/>
-			<div class="restaurant-name"><i class="fas fa-phone-alt" style="color: gray;"></i><%= @restaurant.phone %></div>
+		<div class="col-md-4 restaurant-">
+			<div class="restaurant-address"><i class="fas fa-map-marked-alt fa-fw" style="color: gray;"></i><%= @restaurant.address %></div><br/>
+			<div class="restaurant-name"><i class="fas fa-phone-alt fa-fw" style="color: gray;"></i><%= @restaurant.phone %></div>
 		</div>
 	</div>
 
 	<%# todo:mySQLでviewテーブルを作成しランキング表示にする %>
-		<h3><i class="fas fa-book-open" style="color: gray;"></i> メニュー一覧 <small>（<%= @menus.count %>）</small></h3>
+		<h3><i class="fas fa-book-open fa-fw" style="color: gray;"></i> メニュー一覧 <small>（<%= @menus.count %>）</small></h3>
 			<% @menus.each do |menu| %>
 				<div class="row menu-rank">
 					<div class="col-md-3">
@@ -27,8 +27,8 @@
 					<div class="col-md-8">
 						<p><%= link_to menu.name, public_menu_path(menu.id) %> </p>
 						<div id="star-rate-<%= menu.id %>"><%= menu.reviews.average(:rate).to_f.round(1) %>点｜</div>
-						<div>レビュー（<%= menu.reviews.count%>）件</div>
-						<div class="menu-price">値段 <%= menu.price %>円</div><br/>
+						<div><i class="fas fa-pen" style="color: gray;"></i>レビュー（<%= menu.reviews.count%>）件</div>
+						<div class="menu-price"><i class="fas fa-money-bill-wave-alt fa-fw" style="color: gray;"></i>値段 <%= menu.price %>円</div><br/>
 
 						<%# each文のためこの位置に記載 %>
 						<script>

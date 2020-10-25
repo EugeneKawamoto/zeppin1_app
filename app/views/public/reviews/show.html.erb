@@ -7,7 +7,9 @@
 <div class="col-md-8 col-md-offset-2 review-show-id">
   <div class="row">
     <div class="col-md-3">
-      <%= attachment_image_tag @review.review_images.first, :image ,size:"145x145" %>
+			<%= link_to public_menu_path(@review.menu.id) do %>
+        <%= attachment_image_tag @review.review_images.first, :image ,size:"145x145" %>
+      <% end %>
     </div>
 
     <div class="col-md-9">
