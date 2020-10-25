@@ -13,6 +13,10 @@
     </div>
 
     <div class="col-md-9">
+      <div class="crate_time pull-right">
+        最新更新日：<%= l @review.updated_at, format: :short %>
+      </div>
+      <br/>
       <%= attachment_image_tag @review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"50x50" %>
       <%= @review.user.name %> |
 

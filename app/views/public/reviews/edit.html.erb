@@ -21,10 +21,10 @@
       <%= f.label :comment, "コメント", class:"col-md-offset-1 col-sm-2" %>
       <%= f.text_area :comment, class:"col-sm-8", id: "input-text" %>
     </div>
-      <p id="counter" class="text-right"> 文字</p>
+    <p id="counter" class="text-right"> 文字</p>
 
-      <%= f.hidden_field :restaurant_id, :value => @menu.restaurant.id %>
-      <%= f.hidden_field :menu_id, :value => @menu.id %>
+    <%= f.hidden_field :restaurant_id, :value => @menu.restaurant.id %>
+    <%= f.hidden_field :menu_id, :value => @menu.id %>
 
     <div class="form-group">
       <div id="star">
@@ -52,5 +52,12 @@
     half      :true,
     target    :'#score_number',
     targetType:'score'
+  });
+
+    $(function(){
+  $("#input-text").on("keyup", function() {
+    let countNum = String($(this).val().length);
+    $("#counter").text(countNum + "文字");
+  });
   });
 </script>

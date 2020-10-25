@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
 
   attachment :profile_image
-  validates :introduction, length: { maximum: 250 }, allow_blank: true
+  validates :introduction, length: { maximum: 50 }, allow_blank: true
   validates :name, presence: true, length: { in: 2..17 }
 
   def self.guest

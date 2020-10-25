@@ -10,7 +10,7 @@
 
 ### テーマを選んだ理由
 とあるラーメン屋に訪れた時、人気店ということは知っていたが、どのメニューが美味しいのかは分からなかった。  
-1回目に訪れた時に食べたメニューでは、感動しなかったが、2回目に別のメニューを頼んでみたところ、感動した。   
+1回目に訪れた時に食べたメニューでは、感動しなかったが、2回目に別のメニューを頼んでみたところ、感動した。  
 「メニューごとの人気」が分かるサービスが欲しいと思ったから。
 
 ### ターゲットユーザ
@@ -30,9 +30,18 @@ https://app.diagrams.net/#G1Tm3LlYDr9wyLY8EqKEfRn8x6EaJrW3WY
 https://docs.google.com/spreadsheets/d/10pVjLpwzXf_CYbOYnmY3KiBRRaQ29r_XGBwHcIVs9jk/edit#gid=1182221589
 
 ### 機能一覧　
+- ユーザ登録、ログイン機能（devise)
+- 簡単ログイン機能
+- 投稿機能
+  - 画像投稿機能（refile)
+  - レーティング機能(jquery.raty.js)
+- ブックマーク機能
+- ページネーション機能(kaminari)
+- 検索機能
+　
 https://docs.google.com/spreadsheets/d/10pVjLpwzXf_CYbOYnmY3KiBRRaQ29r_XGBwHcIVs9jk/edit#gid=0
 
-以下箇条書き予定
+
 
 
 ## 開発環境
@@ -44,9 +53,7 @@ https://docs.google.com/spreadsheets/d/10pVjLpwzXf_CYbOYnmY3KiBRRaQ29r_XGBwHcIVs
 
 ## 使用素材
 - PAKUTASO
-- Google Fonts
 - Font Awesom
 - お名前.com
-- MATERIAL DESIGN
 - EC design
 - https://github.com/wbotelhos/raty/tree/master/lib/images
