@@ -5,7 +5,9 @@
 ・メニューに対して。ブックマークができます。  
 ・レストランのメニューに対してユーザが投稿し、評価できます。
 
-<img width="450" alt="ss-zepin-top" src="https://user-images.githubusercontent.com/67733078/97104458-63adcd80-16f7-11eb-8362-634f96903d03.png">
+![ss-zeppin1](https://user-images.githubusercontent.com/67733078/97104571-41687f80-16f8-11eb-9869-e069462d9771.png)
+
+
 
 ### サイトテーマ
 レストランに対して、どのメニューが美味しいのかが分かるサービスです。
