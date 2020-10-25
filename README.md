@@ -45,7 +45,7 @@ https://docs.google.com/spreadsheets/d/10pVjLpwzXf_CYbOYnmY3KiBRRaQ29r_XGBwHcIVs
 - ページネーション機能(kaminari)
 - 検索機能
 - Google Map 表示機能(GoogoleMapAPI)  
-機能詳細リンク
+- 機能詳細リンク
 https://docs.google.com/spreadsheets/d/10pVjLpwzXf_CYbOYnmY3KiBRRaQ29r_XGBwHcIVs9jk/edit#gid=0
 
 ## 開発環境
@@ -56,7 +56,7 @@ https://docs.google.com/spreadsheets/d/10pVjLpwzXf_CYbOYnmY3KiBRRaQ29r_XGBwHcIVs
 - 仮想環境：Vagrant,VirtualBox
 - Nginx
 - Puma
-- AWS：EC2, RDS
+- AWS：EC2, RDS, Route53
 - Capistrano
 - Googole Maps API
 - Rspec
