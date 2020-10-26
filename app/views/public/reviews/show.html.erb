@@ -16,8 +16,8 @@
         <%= attachment_image_tag @review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile col-md-2", size:"66x66" %>
         <div class="review-show-info col-md-8">
           投稿日：<%= l @review.created_at, format: :short %><br/>
-          <%= @review.restaurant.name %>/
-          <%= @review.menu.name %>
+          <%= link_to @review.restaurant.name.truncate(13), public_restaurant_path(@review.restaurant.id) %> /
+          <%= link_to @review.menu.name.truncate(15), public_menu_path(@review.menu.id) %>
         </div>
         <div class="col-md-10">
           <%= @review.user.name %> |
