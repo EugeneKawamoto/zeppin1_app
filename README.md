@@ -5,8 +5,7 @@
 ・メニューに対して、ブックマークができます。  
 ・レストランのメニューに対してユーザが投稿し、評価できます。
 
-![ss-zeppin1](https://user-images.githubusercontent.com/67733078/97104571-41687f80-16f8-11eb-9869-e069462d9771.png)
-
+![zeppin1](https://user-images.githubusercontent.com/67733078/97169336-3f242500-17cd-11eb-9903-79b0d2645070.png)
 
 
 ### サイトテーマ
