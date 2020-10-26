@@ -3,18 +3,17 @@
 		<%= flash[:notice] %>
 	</div>
 
-    <% if @review.errors.any? %>
-      <div id="error_explanation" class="alert alert-danger">
-        <ul>
-          <% @review.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
+  <% if @review.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <ul>
+        <% @review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
     <% end %>
 
   <h3><%= @menu.name %>（<%=link_to @restaurant.name, public_restaurant_path(@restaurant.id) %>）の評判</h3>
-
   <div class="row menu-show">
     <h4>メニュー情報</h4>
     <div class="col-md-4">
@@ -24,12 +23,10 @@
         <%= image_tag 'no_image1.jpg',size:"145x145"%>
       <% end %>
     </div>
-
     <div class="col-md-6">
       <div id="star-rate-<%= @menu.id %>"><%= @menu.reviews.average(:rate).to_f.round(1) %>点｜</div><br/>
       <div class="menu-price"><i class="fas fa-money-bill-wave-alt fa-fw"></i><%= @menu.price %>円</div><br/>
       <div class="restaurant-name"><i class="fas fa-store-alt fa-fw"></i><%= @menu.restaurant.name %></div><br/>
-
       <div class="bookmark">
         <% if @menu.bookmarked_by?(current_user) %>
           <%= link_to public_menu_bookmarks_path(@menu), method: :DELETE do %>
@@ -46,35 +43,33 @@
     </div>
   </div>
 
-    <br/>
+  <br/>
 
-    <div class="review-form">
-      <%= render 'public/reviews/form', review: @review, menu: @menu %>
-    </div>
-
-    <br/>
+  <div class="review-form">
+    <h4>新規レビュー</h4>
+    <%= form_for(review, url: public_reviews_path, html: { class: "form-horizontal" })do |f| %>
+    　<%= render 'public/reviews/form', review: @review, menu: @menu %>
+    <% end %>
+  </div>
+  <br/>
   <h4>レビュー一覧<small>（<%= @reviews.count %>）</small></h4>
-
 
 	<% @reviews.each do |review| %>
     <div class="row review-show">
-
       <div class="col-md-3">
         <%= link_to public_review_path(review.id) do %>
           <%= attachment_image_tag review.review_images.first, :image ,fallback: "no_image1.jpg", size:"145x145" %>
         <% end %>
       </div>
-
       <div class="col-md-8">
-        <div class="crate_time pull-right">
-          最新更新日：<%= l review.updated_at, format: :short %>
+        <div class="create-time pull-right">
+          投稿日：<%= l review.created_at, format: :short %>
         </div>
         <br/>
 				<%= link_to public_users_my_page_path(review.user.id) do %>
           <%= attachment_image_tag review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile", size:"50x50" %>
         <% end %>
-        <%= link_to review.user.name.truncate(14), public_users_my_page_path(review.user.id), class:"user-name" %> |
-
+        <%= link_to review.user.name.truncate(14), public_users_my_page_path(review.user.id), class:"user-name" %>
         <%# 個別星評価のためこの位置に記載 %>
         <span id="star-rate-<%= review.id %>"><%= review.rate %>点｜</span>
           <script>
@@ -87,15 +82,13 @@
             score     : <%= review.rate %>
           });
           </script>
-
         <div class="review-comment"><%= review.comment %></div>
       </div>
-    </div><br/>
+    </div>
+    <br/>
 	<% end %>
-
 </div>
 
-<%# レヴュー平均値 %>
 <script>
 $('#star-rate-<%= @menu.id %>').raty({
   starOff   : '<%= asset_path('star-off.png') %>',

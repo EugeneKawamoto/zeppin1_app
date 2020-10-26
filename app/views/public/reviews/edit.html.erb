@@ -1,15 +1,14 @@
 <div class="col-md-8 col-md-offset-2 review-form">
   <h4>レビュー編集</h4>
-
-      <% if @review.errors.any? %>
-      <div id="error_explanation" class="alert alert-danger">
-        <ul>
-          <% @review.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <ul>
+        <% @review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <%= form_for(@review, url: {controller: 'reviews', action: 'update' }, html: { class: "form-horizontal" } )do |f| %>
     <div class="form-group">

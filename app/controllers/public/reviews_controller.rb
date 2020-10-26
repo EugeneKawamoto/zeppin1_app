@@ -1,15 +1,15 @@
 class Public::ReviewsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show, :create, :edit, :update, :destroy]
 
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     # binding.pry
     if @review.save
-      flash[:notice] = "投稿は正常に完了しました。"
+      flash[:notice] = "レビューは正常に完了しました。"
       redirect_to public_root_path
     else
-      # todo:ajax導入
+      # todo:ajax導入が正しい
       @menu = Menu.find(params[:review][:menu_id])
       @restaurant = @menu.restaurant
       @reviews = @menu.reviews.order(created_at: :desc).page(params[:page]).per(5)

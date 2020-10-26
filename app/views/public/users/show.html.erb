@@ -29,7 +29,7 @@
     <div class="col-md-6">
       <h3><i class="fas fa-pen fa-fw"></i>レビュー一覧</h3>
 
-  <%# todo:部分テンプレート %>
+  <%# todo:reviewとbookmarkのviewを調整する。 %>
   <% if @reviews.present? %>
 
     <% @reviews.each do |review| %>
@@ -42,25 +42,32 @@
       </div>
 
       <div class="col-md-8">
-        <%= attachment_image_tag review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile-thumb", size:"50x50" %>
-        <%= review.user.name.truncate(9) %> |
-
-        <%# each文の中のためこの位置に記載 %>
-        <span id="star-rate-menu<%= review.id %>"><%= review.rate %>点｜</span>
-          <script>
-          $('#star-rate-menu<%= review.id %>').raty({
-            starOff   : '<%= asset_path('star-off.png') %>',
-            starOn    : '<%= asset_path('star-on.png') %>',
-            starHalf  : '<%= asset_path('star-half.png') %>',
-            half      : true,
-            readOnly  : true,
-            score     : <%= review.rate %>,
-          });
-          </script>
-
-        <div class="review-comment"><%= review.comment %></div>
+        <div class="row">
+          <%= attachment_image_tag review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile col-md-3", size:"62x62" %>
+          <div class="mypage-review1 col-md-9">
+          <%= link_to review.restaurant.name.truncate(13), public_restaurant_path(review.restaurant.name), class:"name-link" %>・
+          <%= l review.created_at, format: :short %>
+          </div>
+          <div class="mypage-review2 col-md-9">
+            <%= link_to review.menu.name.truncate(14), public_menu_path(review.menu.id), class:"name-link"%>
+            <div id="star-rate-menu<%= review.id %>"><%= review.rate %>点｜</div>
+          </div>
+            <%# each文の中のためこの位置に記載 %>
+            <script>
+            $('#star-rate-menu<%= review.id %>').raty({
+              starOff   : '<%= asset_path('star-off.png') %>',
+              starOn    : '<%= asset_path('star-on.png') %>',
+              starHalf  : '<%= asset_path('star-half.png') %>',
+              half      : true,
+              readOnly  : true,
+              score     : <%= review.rate %>,
+              });
+            </script>
+          <div class="review-comment col-md-12"><%= review.comment %></div>
+        </div>
       </div>
-    </div><br/>
+    </div>
+    <br/>
 		<% end %>
     <%= paginate @reviews %>
   <% else %>
@@ -78,15 +85,28 @@
           <div class="row bookmark-show">
 
             <div class="col-md-4">
+            <%# 現状は投稿が削除されてもメニュー自体はSeedで存在してしまうため、Errorを避けるため記載 %>
+            <%# TODO:メニューのすべての投稿が削除されると、メニュー自体も削除するように設定 %>
+            <% if bookmark.menu.reviews.present? %>
               <%= link_to public_menu_path(bookmark.menu.id) do %>
                 <%= attachment_image_tag bookmark.menu.reviews.first.review_images.first, :image ,size:"145x145" %>
               <% end %>
+            <% else %>
+              <%= image_tag 'no_image1.jpg',size:"145x145"%>
+            <% end %>
+
             </div>
 
             <div class="col-md-8">
+              <div class="">
+                <i class="fas fa-store-alt fa-fw" style="color: gray;"></i>
+                <%= link_to bookmark.menu.restaurant.name, public_restaurant_path(bookmark.menu.restaurant.id), class:"name-link" %>
+              </div><br/>
+              <div class="">
+                <i class="fas fa-book-open fa-fw" style="color: gray;"></i>
+                <%= link_to bookmark.menu.name, public_menu_path(bookmark.menu.id), class:"name-link"%>
+              </div><br/>
               <div id="star-rate-<%= bookmark.menu.id %>"><%= bookmark.menu.reviews.average(:rate).to_f.round(1) %>点｜</div><br/>
-              <div class="restaurant-name"><i class="fas fa-store-alt fa-fw" style="color: gray;"></i><%= bookmark.menu.restaurant.name %></div><br/>
-              <div class="memnu-name"><i class="fas fa-book-open fa-fw" style="color: gray;"></i><%= bookmark.menu.name %></div><br/>
 
             </div>
             <%# each文のため、文中に記載 %>

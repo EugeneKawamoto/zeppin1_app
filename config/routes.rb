@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  # public内namespaseをルートとしてredirectするために配置
   root 'origins#top'
 
-  # 簡単ログイン機能
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end

@@ -107,8 +107,8 @@ header, nav, h2, h3, h4, p, body, li,footer {
 body {
   font-size: 16px;
   background-color: whitesmoke;
-  .user-login{
-    h4{
+  .user-login {
+    h4 {
       background-color: whitesmoke;
     }
   }
@@ -119,14 +119,14 @@ body {
     padding-top: 5px;
     text-align: center;
     background-color: transparent;
-    h2, h3{
+    h2, h3 {
       color: black;
       background-color: transparent;
     }
   }
   a:hover {
     text-decoration: none;
-    img.profile{
+    img.profile {
       transform: none;
       box-shadow: none;
     }
@@ -135,7 +135,7 @@ body {
       box-shadow: 0 0 30px rgba(0, 0, 0, .2);
       }
   }
-  .review-intro{
+  .review-intro {
     margin:0 0 10px 10px;
     p {
       margin: 0;
@@ -159,28 +159,36 @@ body {
     box-shadow: 15px 15px 0px 0 rgb(50, 52, 53);
     background-image: image-url("photo.jpg");
   }
-  .about-messages{
+  .about-messages {
     margin-top: 10px;
     padding-top: 10px;
     font-size: 20px;
   }
-  .menu-index, .restaurant-infomation{
+  .menu-index, .restaurant-infomation {
     margin: 0 2px 10px 2px;
     padding: 10px;
     background-color: white;
   }
-  .review-index{
+  .review-index {
     margin-bottom: 20px;
     margin-top: 20px;
     background-color: white;
-    a.menu-name{
+    a.menu-name {
       font-size: 14px;
     }
   }
-  .crate_time{
+  .create-time {
     font-size: 11px;
   }
-  .menu-rank{
+  .mypage-review1 {
+    font-size: 12px;
+    text-align: right;
+  }
+  .mypage-review2{
+    font-size: 14px;
+    text-align: right;
+  }
+  .menu-rank {
     background-color: white;
     margin: 0 2px 0 2px;
     padding-top: 10px;
@@ -215,7 +223,7 @@ body {
     margin: 20px;
     background-color: white;
     padding-top: 10px;
-    .user_introduction{
+    .user_introduction {
       margin: 20px;
     }
   }
@@ -234,6 +242,10 @@ body {
     background-color: white;
     padding: 10px;
   }
+  .review-show-info {
+    font-size: 14px;
+    text-align: right;
+  }
   .user-edit-form {
     background-color: white;
     .form-group {
@@ -249,7 +261,7 @@ body {
     height: 200px;
     width: 400px;
   }
-  a.user-name {
+  a.user-name, a.name-link {
     color: black;
     text-decoration: none;
   }

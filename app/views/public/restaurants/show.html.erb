@@ -29,7 +29,6 @@
 						<div id="star-rate-<%= menu.id %>"><%= menu.reviews.average(:rate).to_f.round(1) %>点｜</div>
 						<div><i class="fas fa-pen" style="color: gray;"></i>レビュー（<%= menu.reviews.count%>）件</div>
 						<div class="menu-price"><i class="fas fa-money-bill-wave-alt fa-fw" style="color: gray;"></i>値段 <%= menu.price %>円</div><br/>
-
 						<%# each文のためこの位置に記載 %>
 						<script>
 						$('#star-rate-<%= menu.id %>').raty({
@@ -43,7 +42,8 @@
 						</script>
 
 					</div>
-				</div><br/>
+				</div>
+				<br/>
 			<% end %>
 </div>
 

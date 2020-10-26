@@ -4,12 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
 
-  attachment :profile_image
-  validates :introduction, length: { maximum: 50 }, allow_blank: true
+  validates :introduction, length: { maximum: 250 }, allow_blank: true
   validates :name, presence: true, length: { in: 2..17 }
+  attachment :profile_image
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
