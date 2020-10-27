@@ -62,7 +62,8 @@ https://docs.google.com/spreadsheets/d/10pVjLpwzXf_CYbOYnmY3KiBRRaQ29r_XGBwHcIVs
 
 ## 使用素材
 - PAKUTASO
-- Font Awesom
+- Font Awesome
+- Google Fonts
 - お名前.com
-- EC design
+- LOGO MAKER
 - https://github.com/wbotelhos/raty/tree/master/lib/images
