@@ -43,7 +43,7 @@ https://docs.google.com/spreadsheets/d/10pVjLpwzXf_CYbOYnmY3KiBRRaQ29r_XGBwHcIVs
 - ブックマーク機能
 - ページネーション機能(kaminari)
 - 検索機能
-- Google Map 表示機能(GoogoleMapAPI)  
+- Google Map 表示機能(GoogleMapAPI)  
 - 機能詳細リンク
 https://docs.google.com/spreadsheets/d/10pVjLpwzXf_CYbOYnmY3KiBRRaQ29r_XGBwHcIVs9jk/edit#gid=0
 
