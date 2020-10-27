@@ -30,7 +30,7 @@ body, #wrapper {
 }
 
 header, nav, h2, h3, h4, p, body, li,footer {
-  font-family: 'Noto Sas JP', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .header-content {
@@ -40,12 +40,11 @@ header, nav, h2, h3, h4, p, body, li,footer {
   height: 65px;
   background-color: brown;
   .logo {
-    padding: 10px 20px;
-    margin: 5px 0 0 10px ;
-    height: 50px;
-    font-size: 30px;
-    text-decoration: none;
-    color: white;
+    width: 180px;
+    height: 65px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: image-url("logo2.png");
   }
   .navbar-search {
     padding: 15px 15px;
@@ -90,7 +89,7 @@ header, nav, h2, h3, h4, p, body, li,footer {
   }
 }
 .main-visual {
-  background-image: image-url("main-image1.jpg");
+  background-image: image-url("jay.jpg");
   width: 100%;
   height: 264px;
   background-size: cover;
