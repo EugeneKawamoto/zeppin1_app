@@ -5,10 +5,10 @@ ja:
       not_saved: "新規登録はまだされていません。"
   views:
     pagination:
-      first: "<<"
-      last: ">>"
-      previous: "<"
-      next: ">"
+      first: "<< 最初"
+      last: "最後 >>"
+      previous: "< 前"
+      next: "次 >"
       truncate: "..."
   time:
     formats:
