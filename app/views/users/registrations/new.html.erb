@@ -6,7 +6,7 @@
       <%= render "users/shared/error_messages", resource: resource %>
 
       <div class="form-group">
-        <%= f.label :名前, class:"col-sm-3" %>
+        <%= f.label :お名前, class:"col-sm-3" %>
         <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"col-sm-offset-1 col-sm-4" %>
       </div>
 
@@ -31,10 +31,10 @@
     <% end %>
   </div>
   <h4>登録済みユーザはこちら</h4>
-  <%= link_to "ユーザとしてログインする", new_session_path(resource_name),class: "col-sm-offset-2 col-sm-4" %><br />
+  <%= link_to "=> ユーザとしてログインする", new_session_path(resource_name),class: "col-sm-offset-2 col-sm-4" %><br />
 
   <h4>簡単ログインはこちら</h4>
-  <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "btn btn-info col-sm-offset-2 col-sm-4" %>
+  <%= link_to 'ゲストユーザでログインする', users_guest_sign_in_path, method: :post, class: "btn btn-info col-sm-offset-2 col-sm-4" %>
 
 </div>
 
