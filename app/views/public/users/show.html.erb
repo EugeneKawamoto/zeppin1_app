@@ -45,7 +45,7 @@
         <div class="row">
           <%= attachment_image_tag review.user, :profile_image, :fill, 100, 100, fallback: "no_image1.jpg", class:"img-circle profile col-md-3", size:"62x62" %>
           <div class="mypage-review1 col-md-9">
-          <%= link_to review.restaurant.name.truncate(13), public_restaurant_path(review.restaurant.name), class:"name-link" %>・
+          <%= link_to review.restaurant.name.truncate(13), public_restaurant_path(review.restaurant.id), class:"name-link" %>・
           <%= l review.created_at, format: :short %>
           </div>
           <div class="mypage-review2 col-md-9">
