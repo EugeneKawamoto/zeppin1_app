@@ -6,6 +6,10 @@ class Public::ReviewsController < ApplicationController
     @review.user_id = current_user.id
     # binding.pry
     if @review.save
+      tags = Vision.get_image_data(@review.review_images_images.first)
+      tags.each do |tag|
+        @review.tags.create(name: tag)
+      end
       flash[:notice] = "レビューは正常に完了しました。"
       redirect_to public_root_path
     else

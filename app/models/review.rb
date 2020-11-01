@@ -3,6 +3,7 @@ class Review < ApplicationRecord
   belongs_to :restaurant
   belongs_to :menu
   has_many :review_images
+  has_many :tags, dependent: :destroy
 
   validates :review_images, presence: true
   validates :comment, presence: true, length: { in: 21..1000 }
