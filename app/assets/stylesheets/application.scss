@@ -281,9 +281,11 @@ body {
   .label{
     color: blue;
   }
-// todo:値による色合いの変更
-  .sentiment-score{
+  .sentiment-score.minus{
     color: blue;
+  }
+  .sentiment-score.plus{
+    color: red;
   }
 }
 
