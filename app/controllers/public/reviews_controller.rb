@@ -54,7 +54,7 @@ class Public::ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.destroy
     flash[:notice] = "レビューの削除に成功しました。"
-    redirect_to public_root_path
+    redirect_to public_users_my_page_path(current_user.id)
   end
 
   private
