@@ -34,7 +34,7 @@ module Vision
       response = https.request(request, params)
 
       # APIレスポンス出力
-      JSON.parse(response.body)['responses'][0]['labelAnnotations'].pluck('description').take(10)
+      JSON.parse(response.body)['responses'][0]['labelAnnotations'].pluck('description').take(5)
     end
   end
 end

@@ -4,6 +4,7 @@ class Public::ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
+    @review.score = Language.get_data(review_params[:comment])
     # binding.pry
     if @review.save
       tags = Vision.get_image_data(@review.review_images_images.first)
