@@ -1,10 +1,12 @@
   <%= form_for(review, url: public_reviews_path, html: { class: "form-horizontal" })do |f| %>
     <div class="form-group">
       <%= f.label :review_images_images, "画像", class:"col-md-offset-1 col-sm-2" %>
-      <%= f.attachment_field :review_images_images, multiple: true, class:"col-sm-6" %>
+      <%= attachment_image_tag review.review_images.first, :image, id:"img-prev", fallback: "no_image1.jpg", class:"col-sm-4", size:"200x200" %>
+      <%= f.attachment_field :review_images_images, multiple: true, class:"col-md-offset-3 col-sm-9" %>
     </div>
+    <br>
     <div class="form-group">
-    <%= f.label :comment, "食べた感想", class:"col-md-offset-1 col-sm-2" %>
+    <%= f.label :comment, "食べた感想", class:"col-md-offset-1 col-md-2" %>
     <%= f.text_area :comment, class:"col-sm-8", id: "input-text" %>
     </div>
     <p id="counter" class="text-right"> 文字</p>
@@ -12,8 +14,8 @@
       <%= f.hidden_field :menu_id, :value => menu.id %>
     <div class="form-group">
       <div id="star">
-        <%= f.label :rate,'評価', class:"col-md-offset-1 col-sm-2" %>
-        <%= f.hidden_field :rate, id: :review_star, class:"col-sm-6" %>
+        <%= f.label :rate,'評価', class:"col-md-offset-1 col-md-2" %>
+        <%= f.hidden_field :rate, id: :review_star, class:"col-md-6" %>
         <span id="score_number"></span> 点 |
       </div>
     </div>
@@ -42,4 +44,20 @@
     $("#counter").text(countNum + "文字");
   });
   });
+
+// TODO:プレビューができていない、アップロード後に即反映されない！
+$(document).on("turbolinks:load", function(){
+	function readURL(input) {
+		if(input.files && input.files[0]){
+			var reader = new FileReader();
+			reader.onload = function (e) {
+				$('#img_prev').attr('src', e.target.result);
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+	$("#review.review_images.first_image").change(function(){
+		readURL(this);
+	});
+});
 </script>
