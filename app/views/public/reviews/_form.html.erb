@@ -1,7 +1,6 @@
   <%= form_for(review, url: public_reviews_path, html: { class: "form-horizontal" })do |f| %>
     <div class="form-group">
       <%= f.label :review_images_images, "画像", class:"col-md-offset-1 col-sm-2" %>
-      <%= attachment_image_tag review.review_images.first, :image, id:"img-prev", fallback: "no_image1.jpg", class:"col-sm-4", size:"200x200" %>
       <%= f.attachment_field :review_images_images, multiple: true, class:"col-md-offset-3 col-sm-9" %>
     </div>
     <br>
