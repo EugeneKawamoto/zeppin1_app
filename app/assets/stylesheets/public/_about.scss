@@ -1,0 +1,37 @@
+body{
+  .pen {
+    background: linear-gradient(transparent 70%, rgb(219, 28, 28) 70%);
+  }
+  .about-content {
+    padding-top: 5px;
+    text-align: center;
+    background-color: transparent;
+    h2, h3 {
+      color: black;
+      background-color: transparent;
+    }
+  }
+  .about-messages {
+    margin-top: 10px;
+    padding-top: 10px;
+    font-size: 20px;
+  }
+  .feature-image {
+    width: 70%;
+    height: 250px;
+    margin-bottom: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 15px 15px 0px 0 rgb(50, 52, 53);
+    background-image: image-url("map.jpg");
+  }
+  .how-to-image {
+    width: 70%;
+    height: 250px;
+    margin-bottom: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 15px 15px 0px 0 rgb(50, 52, 53);
+    background-image: image-url("photo.jpg");
+  }
+}

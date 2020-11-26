@@ -1,5 +1,5 @@
 <% restaurants.each do |restaurant| %>
-	<div class="row restaurant-infomation">
+	<div class="row restaurant-info">
 		<h4><%= link_to restaurant.name, public_restaurant_path(restaurant.id) %></h4>
 		<span class="col-md-3"><i class="fas fa-map-marked-alt fa-fw" style="color: gray;"></i>場所</span>
 		<span class="col-md-9"><%= restaurant.address %></span><br/>
