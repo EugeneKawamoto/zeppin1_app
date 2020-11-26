@@ -1,0 +1,13 @@
+body {
+  font-size: 16px;
+  background-color: whitesmoke;
+  .label{
+    color: blue;
+  }
+  .sentiment-score.minus{
+    color: blue;
+  }
+  .sentiment-score.plus{
+    color: red;
+  }
+}

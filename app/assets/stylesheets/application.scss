@@ -29,65 +29,10 @@ body, #wrapper {
   min-height: 100vh;
 }
 
-header, nav, h2, h3, h4, p, body, li,footer {
+header, nav, h2, h3, h4, p, body, li, footer {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 65px;
-  background-color: brown;
-  .logo {
-    width: 180px;
-    height: 65px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: image-url("logo2.png");
-  }
-  .navbar-search {
-    padding: 15px 15px;
-    margin-left: 70px;
-    font-size: 21px;
-  }
-  .btn-search {
-    background-color: white;
-    margin: 0;
-  }
-  .header-profile {
-    transform: none;
-    box-shadow: none;
-    margin-top: 10px;
-  }
-  .nav {
-    padding-right: 20px;
-    li {
-    margin-right: 5px;
-    }
-    a {
-      size: 16px;
-      color: white;
-      text-decoration: none;
-      background-color: brown;
-    }
-    a:hover {
-      background-color: darkred;
-    }
-  }
-  .logo {
-    padding: 10px 20px;
-    margin: 5px 0 0 10px ;
-    height: 50px;
-    font-size: 30px;
-    text-decoration: none;
-    color: white;
-    background-color: brown;
-  }
-  .logo:hover {
-    background-color: darkred;
-  }
-}
 .main-visual {
   background-image: image-url("jay.jpg");
   width: 100%;
@@ -168,14 +113,6 @@ body {
     padding: 10px;
     background-color: white;
   }
-  .review-index {
-    margin-bottom: 20px;
-    margin-top: 20px;
-    background-color: white;
-    a.menu-name {
-      font-size: 14px;
-    }
-  }
   .create-time {
     font-size: 11px;
   }
@@ -186,15 +123,6 @@ body {
   .mypage-review2{
     font-size: 14px;
     text-align: right;
-  }
-  .menu-rank {
-    background-color: white;
-    margin: 0 2px 0 2px;
-    padding-top: 10px;
-    font-size: 18px;
-    p {
-      font-size: 20px;
-    }
   }
   h2 {
     color: brown;
@@ -214,37 +142,6 @@ body {
   img {
     margin-bottom: 10px;
   }
-  .review-form {
-    background-color: white;
-    padding: 10px 30px 10px 10px;
-  }
-  .mypage {
-    margin: 20px;
-    background-color: white;
-    padding-top: 10px;
-    .user_introduction {
-      margin: 20px;
-    }
-  }
-  .menu-show {
-    background-color: white;
-    margin: 0 2px 0 2px;
-    padding-top: 10px;
-    font-size: 18px;
-  }
-  .review-show ,.bookmark-show {
-    background-color: white;
-    padding-top: 10px;
-    margin: 0 2px 0 2px;
-  }
-  .review-show-id {
-    background-color: white;
-    padding: 10px;
-  }
-  .review-show-info {
-    font-size: 14px;
-    text-align: right;
-  }
   .user-edit-form {
     background-color: white;
     .form-group {
@@ -260,16 +157,6 @@ body {
     height: 200px;
     width: 400px;
   }
-  a.user-name, a.name-link {
-    color: black;
-    text-decoration: none;
-  }
-  a.menu-name {
-    margin-left: 3px;
-    font-size: 14px;
-    color: black;
-    text-decoration: none;
-  }
   a {
     color: brown;
     text-decoration: none;
@@ -277,15 +164,6 @@ body {
   }
   i {
     margin: 0 10px 0 5px;
-  }
-  .label{
-    color: blue;
-  }
-  .sentiment-score.minus{
-    color: blue;
-  }
-  .sentiment-score.plus{
-    color: red;
   }
 }
 

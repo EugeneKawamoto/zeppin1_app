@@ -1,0 +1,27 @@
+body {
+  .review-form {
+    background-color: white;
+    padding: 10px 30px 10px 10px;
+  }
+  .review-show {
+  background-color: white;
+  padding-top: 10px;
+  margin: 0 2px 0 2px;
+  }
+  .review-show-id {
+    background-color: white;
+    padding: 10px;
+  }
+  .review-show-info {
+    font-size: 14px;
+    text-align: right;
+  }
+  .review-index {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: white;
+    a.menu-name {
+      font-size: 14px;
+    }
+  }
+}

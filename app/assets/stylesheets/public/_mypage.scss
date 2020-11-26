@@ -1,0 +1,25 @@
+body{
+  .mypage {
+    margin: 20px;
+    background-color: white;
+    padding-top: 10px;
+    .user_introduction {
+      margin: 20px;
+    }
+  }
+  a.user-name, a.name-link {
+    color: black;
+    text-decoration: none;
+  }
+  a.menu-name {
+    margin-left: 3px;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+  }
+  .bookmark-show {
+    background-color: white;
+    padding-top: 10px;
+    margin: 0 2px 0 2px;
+  }
+}
