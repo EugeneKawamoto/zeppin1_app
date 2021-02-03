@@ -12,8 +12,6 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.email == "guest@example.com"
       redirect_to root_path
-    elsif current_user.id =! @user.id
-      redirect_to public_user_path(current_user.id)
     end
   end
 
