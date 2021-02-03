@@ -33,9 +33,9 @@ class Public::ReviewsController < ApplicationController
   def edit
     @review = Review.find(params[:id])
     @menu = @review.menu
-    unless current_user.id == @review.user.id
-      redirect_to public_root_path
-    end
+
+
+
   end
 
   def update
