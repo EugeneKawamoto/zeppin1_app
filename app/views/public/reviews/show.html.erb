@@ -39,10 +39,10 @@
     </div>
   </div>
     <div class="col-md-6 col-md-offset-4">
-      <% if @review.user.id == current_user.id %>
+    
         <%= link_to "レビューを編集する", edit_public_review_path(@review), class:"btn btn-success" %>
         <%= link_to "レビューを削除する", "#{@review.id}", method: :delete, "data-confirm" => "本当に消しますか?", class:"btn btn-danger pull-right" %>
-      <% end %>
+
     </div>
 
 </div>
